@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piero's Pizza</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
 
@@ -32,14 +34,16 @@
         <section id="inicio" class="content-section active">
             <h1>Bienvenidos a Piero's Pizza</h1>
             <p style="font-size: 18px; line-height: 1.8; color: #495057;">
-                Descubre el auténtico sabor de la pizza italiana en Colombia. En Piero's Pizza, preparamos nuestras pizzas con ingredientes frescos y recetas tradicionales que conquistarán tu paladar.
+                Descubre el auténtico sabor de la pizza italiana en Colombia. En Piero's Pizza, preparamos nuestras
+                pizzas con ingredientes frescos y recetas tradicionales que conquistarán tu paladar.
             </p>
             <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
-                Somos el lugar favorito de las familias que buscan la mejor pizza. Nuestro horno de leña y nuestra masa artesanal hacen la diferencia en cada bocado.
+                Somos el lugar favorito de las familias que buscan la mejor pizza. Nuestro horno de leña y nuestra masa
+                artesanal hacen la diferencia en cada bocado.
             </p>
-            <div style="margin-top: 40px; text-align: center;">
-                <h2 style="color: #ff6b6b; font-size: 32px;">¡Haz tu pedido hoy!</h2>
-                <p style="font-size: 20px; margin-top: 15px;">Llámanos al: <strong style="color: #ff6b6b;">+57 304 632 7574</strong></p>
+            <div class="cta-box" style="margin-top: 40px;">
+                <h2>¡Haz tu pedido hoy!</h2>
+                <div class="phone-number">+57 304 632 7574</div>
             </div>
         </section>
 
@@ -47,34 +51,52 @@
             <h1>Nuestro Menú</h1>
             <div class="pizza-grid">
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Margarita</h3>
-                    <p>Tomate, mozzarella fresca, albahaca y aceite de oliva</p>
-                    <div class="price">$12.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Margarita</h3>
+                        <p>Tomate, mozzarella fresca, albahaca y aceite de oliva</p>
+                        <div class="price">$12.99</div>
+                    </div>
+                    <img src="margarita.png" alt="Pizza Margarita">
                 </div>
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Pepperoni</h3>
-                    <p>Salsa de tomate, mozzarella y abundante pepperoni</p>
-                    <div class="price">$14.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Pepperoni</h3>
+                        <p>Salsa de tomate, mozzarella y abundante pepperoni</p>
+                        <div class="price">$14.99</div>
+                    </div>
+                    <img src="pepperoni.png" alt="Pizza Pepperoni">
                 </div>
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Cuatro Quesos</h3>
-                    <p>Mozzarella, gorgonzola, parmesano y provolone</p>
-                    <div class="price">$15.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Cuatro Quesos</h3>
+                        <p>Mozzarella, gorgonzola, parmesano y provolone</p>
+                        <div class="price">$15.99</div>
+                    </div>
+                    <img src="cuatro_quesos.png" alt="Pizza Cuatro Quesos">
                 </div>
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Hawaiana</h3>
-                    <p>Jamón, piña, mozzarella y salsa de tomate</p>
-                    <div class="price">$13.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Hawaiana</h3>
+                        <p>Jamón, piña, mozzarella y salsa de tomate</p>
+                        <div class="price">$13.99</div>
+                    </div>
+                    <img src="hawaiana.png" alt="Pizza Hawaiana">
                 </div>
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Vegetariana</h3>
-                    <p>Pimientos, champiñones, cebolla, aceitunas y tomate</p>
-                    <div class="price">$13.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Vegetariana</h3>
+                        <p>Pimientos, champiñones, cebolla, aceitunas y tomate</p>
+                        <div class="price">$13.99</div>
+                    </div>
+                    <img src="vegetariana.png" alt="Pizza Vegetariana">
                 </div>
                 <div class="pizza-card">
-                    <h3>🍕 Pizza Barbacoa</h3>
-                    <p>Pollo, salsa BBQ, cebolla morada y mozzarella</p>
-                    <div class="price">$16.99</div>
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Barbacoa</h3>
+                        <p>Pollo, salsa BBQ, cebolla morada y mozzarella</p>
+                        <div class="price">$16.99</div>
+                    </div>
+                    <img src="barbacoa.png" alt="Pizza Barbacoa">
                 </div>
             </div>
         </section>
@@ -90,17 +112,21 @@
                 <p>Instagram: @pieros_pizza</p>
             </div>
             <p style="margin-top: 30px; font-size: 16px; color: #495057;">
-                ¿Tienes alguna pregunta o comentario? ¡Nos encantaría escucharte! Contáctanos por cualquiera de nuestros medios y te responderemos lo antes posible.
+                ¿Tienes alguna pregunta o comentario? ¡Nos encantaría escucharte! Contáctanos por cualquiera de nuestros
+                medios y te responderemos lo antes posible.
             </p>
         </section>
 
         <section id="nosotros" class="content-section">
             <h1>Quiénes Somos</h1>
             <p style="font-size: 18px; line-height: 1.8; color: #495057;">
-                Piero's Pizza nació de la pasión por la auténtica pizza italiana. Trajimos las recetas tradicionales y las adaptamos con el sabor colombiano, creando pizzas únicas que conquistan paladares.
+                Piero's Pizza nació de la pasión por la auténtica pizza italiana. Trajimos las recetas tradicionales y
+                las adaptamos con el sabor colombiano, creando pizzas únicas que conquistan paladares.
             </p>
             <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
-                Nuestro compromiso es simple: ingredientes frescos, recetas auténticas y un servicio cálido que te haga sentir como en casa. Cada pizza que sale de nuestro horno cuenta una historia de tradición y amor por la gastronomía.
+                Nuestro compromiso es simple: ingredientes frescos, recetas auténticas y un servicio cálido que te haga
+                sentir como en casa. Cada pizza que sale de nuestro horno cuenta una historia de tradición y amor por la
+                gastronomía.
             </p>
             <div style="margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 15px;">
                 <h3 style="color: #ff6b6b; margin-bottom: 15px;">Nuestros Valores</h3>
@@ -131,11 +157,13 @@
                 <p><strong>🚇 Transporte público:</strong> Cerca de las principales rutas de buses</p>
             </div>
             <p style="margin-top: 30px; font-size: 16px; color: #495057;">
-                Estamos ubicados en el corazón de la ciudad, fácilmente accesible en auto o transporte público. ¡Te esperamos!
+                Estamos ubicados en el corazón de la ciudad, fácilmente accesible en auto o transporte público. ¡Te
+                esperamos!
             </p>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
