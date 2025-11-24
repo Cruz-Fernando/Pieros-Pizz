@@ -1,0 +1,42 @@
+📁 GUÍA DE NOMBRES DE IMÁGENES PARA PIERO'S PIZZA
+========================================================
+
+Coloca todas las imágenes en la carpeta: img/
+
+🍕 PIZZAS (6 imágenes):
+------------------------
+img/hawaiana.png
+img/vegetariana.png
+img/napolitana.png
+img/pollo_champinones.png
+img/carnes.png
+img/pollo_maiz.png
+
+🍰 PORCIONES:
+------------------------
+img/porcion.png
+
+🥟 PANZEROTTIS (6 imágenes):
+------------------------
+img/panzerotti_jamon.png
+img/panzerotti_hawaiano.png
+img/panzerotti_italiano.png
+img/panzerotti_romano.png
+img/panzerotti_pollo.png
+img/panzerotti_veggie.png
+
+🍝 LASAGNAS (4 imágenes):
+------------------------
+img/lasagna_pollo.png
+img/lasagna_bolognesa.png
+img/lasagna_veggie.png
+img/lasagna_tocineta.png
+
+========================================================
+TOTAL: 18 imágenes necesarias
+
+INSTRUCCIONES:
+1. Guarda tus imágenes con estos nombres EXACTOS
+2. Colócalas en la carpeta "img"
+3. Formato recomendado: PNG o JPG
+4. Tamaño recomendado: 500x500 píxeles mínimo
