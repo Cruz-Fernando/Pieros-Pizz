@@ -34,153 +34,459 @@
     <main class="content">
         <section class="content-section active">
             <h1>Nuestro Menú</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Haz clic en cada categoría para ver
+                nuestros productos</p>
 
             <!-- Categoría: Pizzas -->
-            <h2 class="menu-category">🍕 Pizzas</h2>
-            <p class="category-info">Disponibles en 3 tamaños: Pequeña $24,000 | Mediana $28,000 | Grande $32,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Hawaiana</h3>
-                        <p>Jamón, piña, mozzarella y salsa de tomate</p>
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('pizzas')">
+                    <span>🍕 Pizzas</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="pizzas">
+                    <p class="size-info">Disponibles en 3 tamaños: Pequeña (P) | Mediana (M) | Grande (G)</p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="img/pizza_real.png" alt="Pizzas" style="max-width: 300px; border-radius: 10px;">
                     </div>
-                    <img src="img/hawaiana.png" alt="Pizza Hawaiana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Vegetariana</h3>
-                        <p>Pimientos, champiñones, cebolla, aceitunas y tomate</p>
-                    </div>
-                    <img src="img/vegetariana.png" alt="Pizza Vegetariana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Napolitana</h3>
-                        <p>Tomate, mozzarella, anchoas y orégano</p>
-                    </div>
-                    <img src="img/napolitana.png" alt="Pizza Napolitana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Pollo y Champiñones</h3>
-                        <p>Pollo, champiñones frescos y mozzarella</p>
-                    </div>
-                    <img src="img/pollo_champinones.png" alt="Pizza Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Especial de Carnes</h3>
-                        <p>Combinación de carnes selectas y mozzarella</p>
-                    </div>
-                    <img src="img/carnes.png" alt="Pizza Especial de Carnes">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Pollo, Maíz y Tocineta</h3>
-                        <p>Pollo, maíz dulce, tocineta crujiente y mozzarella</p>
-                    </div>
-                    <img src="img/pollo_maiz.png" alt="Pizza Pollo, Maíz y Tocineta">
-                </div>
-            </div>
 
-            <!-- Categoría: Porciones de Pizza -->
-            <h2 class="menu-category">🍰 Porciones de Pizza</h2>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>Porción Individual</h3>
-                        <p>Cualquier variedad de nuestras pizzas en porción</p>
-                        <div class="price">$6,000</div>
-                    </div>
-                    <img src="img/porcion.png" alt="Porción de Pizza">
-                </div>
-            </div>
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h3>Napolitana</h3>
+                            <p>Tomate, mozzarella, anchoas y orégano</p>
+                            <div class="prices">
+                                <span>P: $25,000</span>
+                                <span>M: $27,000</span>
+                                <span>G: $30,000</span>
+                            </div>
+                        </div>
 
-            <!-- Categoría: Panzerotti -->
-            <h2 class="menu-category">🥟 Panzerotti</h2>
-            <p class="category-info">Desde $13,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Jamón y Queso</h3>
-                        <p>Jamón y queso mozzarella en masa frita</p>
+                        <div class="menu-item">
+                            <h3>Italiana</h3>
+                            <p>Salsa especial con ingredientes italianos</p>
+                            <div class="prices">
+                                <span>P: $25,000</span>
+                                <span>M: $27,000</span>
+                                <span>G: $30,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Romana</h3>
+                            <p>Especialidad romana</p>
+                            <div class="prices">
+                                <span>P: $25,000</span>
+                                <span>M: $27,000</span>
+                                <span>G: $30,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Tricolor</h3>
+                            <p>Tres quesos selectos</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Hawaiana</h3>
+                            <p>Jamón, piña y mozzarella</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pollo</h3>
+                            <p>Pollo y mozzarella</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Jamón</h3>
+                            <p>Jamón y mozzarella</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pollo y Champiñones</h3>
+                            <p>Pollo con champiñones frescos</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Champiñones</h3>
+                            <p>Champiñones frescos y mozzarella</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Vegetariana</h3>
+                            <p>Vegetales frescos selectos</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pollo con Piñones</h3>
+                            <p>Pollo y piñones</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Salami y Champiñones</h3>
+                            <p>Salami con champiñones</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Anchoas y Champiñones</h3>
+                            <p>Anchoas con champiñones</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pepperoni y Champiñones</h3>
+                            <p>Pepperoni con champiñones</p>
+                            <div class="prices">
+                                <span>P: $27,000</span>
+                                <span>M: $30,000</span>
+                                <span>G: $35,000</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Especial</h3>
+                            <p>Nuestra pizza especial de la casa</p>
+                            <div class="prices">
+                                <span>P: $30,000</span>
+                                <span>M: $35,000</span>
+                                <span>G: $40,000</span>
+                            </div>
+                        </div>
                     </div>
-                    <img src="img/panzerotti_jamon.png" alt="Panzerotti Jamón y Queso">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Hawaiano</h3>
-                        <p>Jamón, piña y queso mozzarella</p>
+
+                    <div class="menu-subsection">
+                        <h4>🍰 Porciones de Pizza</h4>
+                        <div class="menu-item">
+                            <h3>Porción Individual</h3>
+                            <p>Cualquier variedad</p>
+                            <div class="price-single">$6,000</div>
+                        </div>
                     </div>
-                    <img src="img/panzerotti_hawaiano.png" alt="Panzerotti Hawaiano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Italiano</h3>
-                        <p>Ingredientes tradicionales italianos</p>
-                    </div>
-                    <img src="img/panzerotti_italiano.png" alt="Panzerotti Italiano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Romano</h3>
-                        <p>Especialidad romana con quesos selectos</p>
-                    </div>
-                    <img src="img/panzerotti_romano.png" alt="Panzerotti Romano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Pollo y Champiñones</h3>
-                        <p>Pollo y champiñones frescos</p>
-                    </div>
-                    <img src="img/panzerotti_pollo.png" alt="Panzerotti Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Vegetariano</h3>
-                        <p>Vegetales frescos y queso mozzarella</p>
-                    </div>
-                    <img src="img/panzerotti_veggie.png" alt="Panzerotti Vegetariano">
                 </div>
             </div>
 
             <!-- Categoría: Lasagna -->
-            <h2 class="menu-category">🍝 Lasagna</h2>
-            <p class="category-info">$16,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Pollo y Champiñones</h3>
-                        <p>Capas de pasta con pollo y champiñones</p>
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('lasagna')">
+                    <span>🍝 Lasagna</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="lasagna">
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h3>Lasagna Piero's</h3>
+                            <p>Carne bolognesa (especialidad)</p>
+                            <div class="price-single">$25,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Italiana</h3>
+                            <p>Receta tradicional italiana</p>
+                            <div class="price-single">$25,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Napolitana</h3>
+                            <p>Estilo napolitano</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Tricolor</h3>
+                            <p>Tres quesos especiales</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Hawaiana</h3>
+                            <p>Con jamón y piña</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Pollo</h3>
+                            <p>Con pollo desmenuzado</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Lasagna Jamón</h3>
+                            <p>Con jamón especial</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
                     </div>
-                    <img src="img/lasagna_pollo.png" alt="Lasagna Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Boloñesa</h3>
-                        <p>La clásica lasagna con carne boloñesa</p>
-                    </div>
-                    <img src="img/lasagna_bolognesa.png" alt="Lasagna Boloñesa">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Vegetariana</h3>
-                        <p>Vegetales frescos y queso gratinado</p>
-                    </div>
-                    <img src="img/lasagna_veggie.png" alt="Lasagna Vegetariana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Tocineta con Champiñones y Pollo</h3>
-                        <p>Tocineta crujiente, champiñones y pollo</p>
-                    </div>
-                    <img src="img/lasagna_tocineta.png" alt="Lasagna Tocineta con Champiñones y Pollo">
                 </div>
             </div>
+
+            <!-- Categoría: Espagueti -->
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('espagueti')">
+                    <span>🍝 Espagueti</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="espagueti">
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h3>Napolitano</h3>
+                            <p>Salsa napolitana tradicional</p>
+                            <div class="price-single">$25,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Boloñesa</h3>
+                            <p>Con carne boloñesa</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Italiana</h3>
+                            <p>Receta italiana clásica</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Carbonara</h3>
+                            <p>Con crema y tocineta</p>
+                            <div class="price-single">$27,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Panzerotti -->
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('panzerotti')">
+                    <span>🥟 Panzerotti</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="panzerotti">
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="img/panzerotti_jamon.png" alt="Panzerotti"
+                            style="max-width: 250px; border-radius: 10px;">
+                    </div>
+
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <h3>Italiana</h3>
+                            <p>Relleno italiano tradicional</p>
+                            <div class="price-single">$16,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Romano</h3>
+                            <p>Especialidad romana</p>
+                            <div class="price-single">$16,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Tricolor</h3>
+                            <p>Tres quesos</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Hawaiana</h3>
+                            <p>Jamón y piña</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pollo y Champiñones</h3>
+                            <p>Pollo con champiñones</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Jamón</h3>
+                            <p>Jamón y queso</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Queso</h3>
+                            <p>Queso mozzarella</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Pollo</h3>
+                            <p>Relleno de pollo</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <h3>Champiñones y Tocineta</h3>
+                            <p>Champiñones con tocineta</p>
+                            <div class="price-single">$18,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Cannelloni y Ravioli -->
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('pasta-rellena')">
+                    <span>🍽️ Cannelloni & Ravioli</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="pasta-rellena">
+                    <div class="menu-subsection">
+                        <h4>Cannelloni</h4>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <h3>Cannelloni de Carne y Pollo</h3>
+                                <div class="price-single">$27,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Cannelloni Florentina</h3>
+                                <div class="price-single">$25,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Cannelloni Champiñones</h3>
+                                <div class="price-single">$25,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Cannelloni de Pollo</h3>
+                                <div class="price-single">$25,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Cannelloni de Espinaca y Queso</h3>
+                                <div class="price-single">$27,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-subsection">
+                        <h4>Ravioli</h4>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <h3>Ravioli de Carne y Queso</h3>
+                                <div class="price-single">$25,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Ravioli de Espinaca y Queso</h3>
+                                <div class="price-single">$25,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Hamburguesas y Perros -->
+            <div class="menu-accordion">
+                <button class="accordion-header" onclick="toggleAccordion('comida-rapida')">
+                    <span>🍔 Hamburguesas & Perros</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content" id="comida-rapida">
+                    <div class="menu-subsection">
+                        <h4>🍔 Hamburguesas</h4>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <h3>Hamburguesa Sencilla</h3>
+                                <div class="price-single">$16,000</div>
+                            </div>
+
+                            <div class="menu-item">
+                                <h3>Hamburguesa Especial</h3>
+                                <div class="price-single">$27,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-subsection">
+                        <h4>🌭 Perros</h4>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <h3>Perro Sencillo</h3>
+                                <div class="price-single">$14,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Función para toggle de acordeón
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const allContents = document.querySelectorAll('.accordion-content');
+            const allHeaders = document.querySelectorAll('.accordion-header');
+
+            // Cerrar todos los demás
+            allContents.forEach(item => {
+                if (item.id !== id) {
+                    item.classList.remove('active');
+                }
+            });
+
+            allHeaders.forEach(header => {
+                if (!header.nextElementSibling || header.nextElementSibling.id !== id) {
+                    header.classList.remove('active');
+                }
+            });
+
+            // Toggle el actual
+            content.classList.toggle('active');
+            content.previousElementSibling.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
