@@ -527,13 +527,24 @@ h1 {
     margin-bottom: 15px;
 }
 
+/* Logo styling in menu */
+.accordion-content img[alt="Logo"] {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-content img[alt="Logo"]:hover {
+    transform: scale(1.05);
+    opacity: 1 !important;
+}
+
 @media (max-width: 768px) {
     .content {
-        padding: 100px 20px 20px 20px;
+        padding: 80px 15px 20px 15px;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 26px;
+        margin-bottom: 15px;
     }
 
     .pizza-card {
@@ -548,30 +559,31 @@ h1 {
     }
 
     .cta-box {
-        padding: 30px 15px;
+        padding: 25px 15px;
     }
 
     .cta-box h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .cta-box .phone-number {
-        font-size: 16px;
-        padding: 8px 10px;
+        font-size: 20px;
+        padding: 10px 15px;
         letter-spacing: 0px;
     }
 
     .menu-category {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .category-info {
         font-size: 14px;
+        padding: 10px;
     }
 
     .maps-button {
         font-size: 16px;
-        padding: 12px 30px;
+        padding: 12px 25px;
     }
 
     .map-container iframe {
@@ -580,23 +592,81 @@ h1 {
 
     .status-indicator {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 12px 18px;
+        max-width: 250px;
     }
 
     .status-icon {
-        font-size: 22px;
+        font-size: 20px;
     }
 
+    .status-widget {
+        padding: 20px 15px;
+    }
+
+    .status-widget h3 {
+        font-size: 18px;
+    }
+
+    /* Mobile Menu Accordion Fixes */
     .menu-items-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .accordion-header {
-        font-size: 18px;
-        padding: 15px 20px;
+        font-size: 17px;
+        padding: 15px 18px;
     }
 
+    .accordion-content.active {
+        padding: 15px;
+    }
+
+    .menu-item {
+        padding: 12px;
+    }
+
+    .menu-item h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .menu-item p {
+        font-size: 12px;
+        min-height: auto;
+        margin-bottom: 8px;
+    }
+
+    /* Fix price badges in mobile */
     .prices {
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .prices span {
+        padding: 5px 10px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .price-single {
+        font-size: 16px;
+        padding: 6px 14px;
+    }
+
+    .size-info {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .menu-subsection h4 {
+        font-size: 18px;
+    }
+
+    /* Better image sizing on mobile */
+    .accordion-content img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
