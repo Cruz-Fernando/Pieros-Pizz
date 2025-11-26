@@ -27,12 +27,13 @@ body {
     cursor: pointer;
     font-size: 18px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .menu-toggle.hidden {
     opacity: 0;
     pointer-events: none;
+    transform: scale(0.8);
 }
 
 .menu-toggle:hover {
@@ -318,6 +319,77 @@ h1 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Status Widget */
+.status-widget {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    border: 2px solid #dee2e6;
+}
+
+.status-widget h3 {
+    color: #2d3436;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    margin: 10px auto;
+    max-width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.status-indicator.open {
+    background: linear-gradient(135deg, #51cf66 0%, #40c057 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(64, 192, 87, 0.4);
+}
+
+.status-indicator.closed {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.status-icon {
+    font-size: 28px;
+    animation: pulse-icon 2s infinite;
+}
+
+@keyframes pulse-icon {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.status-text {
+    font-size: 18px;
+}
+
+.status-hours {
+    color: #495057;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .content {
         padding: 100px 20px 20px 20px;
@@ -367,5 +439,14 @@ h1 {
 
     .map-container iframe {
         height: 300px;
+    }
+
+    .status-indicator {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .status-icon {
+        font-size: 22px;
     }
 }

@@ -34,7 +34,17 @@
     <main class="content">
         <section class="content-section active">
             <h1>Horarios de Atención</h1>
-            <div class="contact-info">
+
+            <!-- Estado Abierto/Cerrado -->
+            <div class="status-widget" id="statusWidget">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-icon" id="statusIcon">⏰</span>
+                    <span class="status-text" id="statusText">Cargando...</span>
+                </div>
+                <p class="status-hours" style="margin-top: 10px;">Actualización en tiempo real según hora de Cúcuta</p>
+            </div>
+
+            <div class="contact-info" style="margin-top: 30px;">
                 <p><strong>Lunes a Sábado:</strong> 5:00 PM - 10:00 PM</p>
                 <p><strong>Domingo y Festivos:</strong> 5:00 PM - 10:00 PM</p>
             </div>
