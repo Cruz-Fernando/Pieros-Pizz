@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piero's Pizza</title>
+    <title>Inicio - Piero's Pizza</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -21,18 +21,18 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" class="nav-link active" data-section="inicio">🏠 Inicio</a></li>
-                <li><a href="#" class="nav-link" data-section="menu">📋 Menú</a></li>
-                <li><a href="#" class="nav-link" data-section="contacto">📞 Contáctanos</a></li>
-                <li><a href="#" class="nav-link" data-section="nosotros">👥 Quiénes Somos</a></li>
-                <li><a href="#" class="nav-link" data-section="horarios">🕐 Horarios</a></li>
-                <li><a href="#" class="nav-link" data-section="ubicacion">📍 Ubicación</a></li>
+                <li><a href="index.html" class="nav-link active">🏠 Inicio</a></li>
+                <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
+                <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
+                <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
+                <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
+                <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
             </ul>
         </nav>
     </aside>
 
     <main class="content">
-        <section id="inicio" class="content-section active">
+        <section class="content-section active">
             <h1>Bienvenidos a Piero's Pizza</h1>
             <p style="font-size: 18px; line-height: 1.8; color: #495057;">
                 Descubre el auténtico sabor de la pizza italiana en Colombia. En Piero's Pizza, preparamos nuestras
@@ -50,222 +50,6 @@
                 <h2>¡Haz tu pedido hoy!</h2>
                 <div class="phone-number">+57 3046327574</div>
             </div>
-        </section>
-
-        <section id="menu" class="content-section">
-            <h1>Nuestro Menú</h1>
-
-            <!-- Categoría: Pizzas -->
-            <h2 class="menu-category">🍕 Pizzas</h2>
-            <p class="category-info">Disponibles en 3 tamaños: Pequeña $24,000 | Mediana $28,000 | Grande $32,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Hawaiana</h3>
-                        <p>Jamón, piña, mozzarella y salsa de tomate</p>
-                    </div>
-                    <img src="img/hawaiana.png" alt="Pizza Hawaiana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Vegetariana</h3>
-                        <p>Pimientos, champiñones, cebolla, aceitunas y tomate</p>
-                    </div>
-                    <img src="img/vegetariana.png" alt="Pizza Vegetariana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Napolitana</h3>
-                        <p>Tomate, mozzarella, anchoas y orégano</p>
-                    </div>
-                    <img src="img/napolitana.png" alt="Pizza Napolitana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Pollo y Champiñones</h3>
-                        <p>Pollo, champiñones frescos y mozzarella</p>
-                    </div>
-                    <img src="img/pollo_champinones.png" alt="Pizza Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Especial de Carnes</h3>
-                        <p>Combinación de carnes selectas y mozzarella</p>
-                    </div>
-                    <img src="img/carnes.png" alt="Pizza Especial de Carnes">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍕 Pizza Pollo, Maíz y Tocineta</h3>
-                        <p>Pollo, maíz dulce, tocineta crujiente y mozzarella</p>
-                    </div>
-                    <img src="img/pollo_maiz.png" alt="Pizza Pollo, Maíz y Tocineta">
-                </div>
-            </div>
-
-            <!-- Categoría: Porciones de Pizza -->
-            <h2 class="menu-category">🍰 Porciones de Pizza</h2>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>Porción Individual</h3>
-                        <p>Cualquier variedad de nuestras pizzas en porción</p>
-                        <div class="price">$6,000</div>
-                    </div>
-                    <img src="img/porcion.png" alt="Porción de Pizza">
-                </div>
-            </div>
-
-            <!-- Categoría: Panzerotti -->
-            <h2 class="menu-category">🥟 Panzerotti</h2>
-            <p class="category-info">Desde $13,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Jamón y Queso</h3>
-                        <p>Jamón y queso mozzarella en masa frita</p>
-                    </div>
-                    <img src="img/panzerotti_jamon.png" alt="Panzerotti Jamón y Queso">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Hawaiano</h3>
-                        <p>Jamón, piña y queso mozzarella</p>
-                    </div>
-                    <img src="img/panzerotti_hawaiano.png" alt="Panzerotti Hawaiano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Italiano</h3>
-                        <p>Ingredientes tradicionales italianos</p>
-                    </div>
-                    <img src="img/panzerotti_italiano.png" alt="Panzerotti Italiano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Romano</h3>
-                        <p>Especialidad romana con quesos selectos</p>
-                    </div>
-                    <img src="img/panzerotti_romano.png" alt="Panzerotti Romano">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Pollo y Champiñones</h3>
-                        <p>Pollo y champiñones frescos</p>
-                    </div>
-                    <img src="img/panzerotti_pollo.png" alt="Panzerotti Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🥟 Panzerotti Vegetariano</h3>
-                        <p>Vegetales frescos y queso mozzarella</p>
-                    </div>
-                    <img src="img/panzerotti_veggie.png" alt="Panzerotti Vegetariano">
-                </div>
-            </div>
-
-            <!-- Categoría: Lasagna -->
-            <h2 class="menu-category">🍝 Lasagna</h2>
-            <p class="category-info">$16,000</p>
-            <div class="pizza-grid">
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Pollo y Champiñones</h3>
-                        <p>Capas de pasta con pollo y champiñones</p>
-                    </div>
-                    <img src="img/lasagna_pollo.png" alt="Lasagna Pollo y Champiñones">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Boloñesa</h3>
-                        <p>La clásica lasagna con carne boloñesa</p>
-                    </div>
-                    <img src="img/lasagna_bolognesa.png" alt="Lasagna Boloñesa">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Vegetariana</h3>
-                        <p>Vegetales frescos y queso gratinado</p>
-                    </div>
-                    <img src="img/lasagna_veggie.png" alt="Lasagna Vegetariana">
-                </div>
-                <div class="pizza-card">
-                    <div class="pizza-card-content">
-                        <h3>🍝 Lasagna Tocineta con Champiñones y Pollo</h3>
-                        <p>Tocineta crujiente, champiñones y pollo</p>
-                    </div>
-                    <img src="img/lasagna_tocineta.png" alt="Lasagna Tocineta con Champiñones y Pollo">
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="content-section">
-            <h1>Contáctanos</h1>
-            <div class="contact-info">
-                <p><strong>📞 Teléfono:</strong> +57 3046327574</p>
-                <br>
-                <p><strong>📧 Email:</strong> pierospizza@gmail.com</p>
-                <br>
-                <p><strong>💬 WhatsApp:</strong> +57 3046327574</p>
-                <br>
-                <p><strong>📱 Redes Sociales:</strong></p>
-                <p>Facebook: @PierosPizza</p>
-                <p>Instagram: @pieros_pizza</p>
-            </div>
-            <p style="margin-top: 30px; font-size: 16px; color: #495057;">
-                ¿Tienes alguna pregunta o comentario? ¡Nos encantaría escucharte! Contáctanos por cualquiera de nuestros
-                medios y te responderemos lo antes posible.
-            </p>
-        </section>
-
-        <section id="nosotros" class="content-section">
-            <h1>Quiénes Somos</h1>
-            <p style="font-size: 18px; line-height: 1.8; color: #495057;">
-                Piero's Pizza nació de la pasión por la auténtica pizza italiana. Trajimos las recetas tradicionales y
-                las adaptamos con el sabor colombiano, creando pizzas únicas que conquistan paladares.
-            </p>
-            <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
-                Nuestro compromiso es simple: ingredientes frescos, recetas auténticas y un servicio cálido que te haga
-                sentir como en casa. Cada pizza que sale de nuestro horno cuenta una historia de tradición y amor por la
-                gastronomía.
-            </p>
-            <div style="margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                <h3 style="color: #ff6b6b; margin-bottom: 15px;">Nuestros Valores</h3>
-                <p><strong>🎯 Calidad:</strong> Solo los mejores ingredientes</p>
-                <br>
-                <p><strong>🌱 Frescura:</strong> Ingredientes de la más alta calidad</p>
-                <br>
-                <p><strong>🍽️ Sabor:</strong> Recetas auténticas con el mejor sabor</p>
-                <br>
-                <p><strong>❤️ Pasión:</strong> Amor en cada preparación</p>
-                <br>
-                <p><strong>👨‍👩‍👧‍👦 Familia:</strong> Tratamos a cada cliente como parte de nuestra familia</p>
-                <br>
-                <p><strong>🇮🇹 Tradición:</strong> Recetas auténticas de Italia</p>
-            </div>
-        </section>
-
-        <section id="horarios" class="content-section">
-            <h1>Horarios de Atención</h1>
-            <div class="contact-info">
-                <p><strong>Lunes a Sábado:</strong> 5:00 PM - 10:00 PM</p>
-                <p><strong>Domingo y Festivos:</strong> 5:00 PM - 10:00 PM</p>
-            </div>
-            <p style="margin-top: 30px; font-size: 16px; color: #495057;">
-                También ofrecemos servicio de delivery y take-out. ¡Llámanos para hacer tu pedido!
-            </p>
-        </section>
-
-        <section id="ubicacion" class="content-section">
-            <h1>Nuestra Ubicación</h1>
-            <div class="contact-info">
-                <p><strong>📍 Dirección:</strong> AV 3E #7-38 -- Barrio Popular a lado del local Secretos de Mujer</p>
-                <p><strong>🅿️ Estacionamiento:</strong> Disponible Frente al local</p>
-            </div>
-            <p style="margin-top: 30px; font-size: 16px; color: #495057;">
-                Estamos ubicados en el corazón de la ciudad a pocas cuadras del Ventura Plaza, fácilmente accesible en
-                auto o motocicleta. ¡Te esperamos!
-            </p>
         </section>
     </main>
 

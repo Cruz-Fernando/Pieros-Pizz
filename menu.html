@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Piero's Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="Piero's Pizza Logo"
+                style="width: 100%; max-width: 200px; margin-bottom: 10px;">
+            <p>La mejor pizza de Colombia</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Inicio</a></li>
+                <li><a href="menu.html" class="nav-link active">📋 Menú</a></li>
+                <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
+                <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
+                <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
+                <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section class="content-section active">
+            <h1>Nuestro Menú</h1>
+
+            <!-- Categoría: Pizzas -->
+            <h2 class="menu-category">🍕 Pizzas</h2>
+            <p class="category-info">Disponibles en 3 tamaños: Pequeña $24,000 | Mediana $28,000 | Grande $32,000</p>
+            <div class="pizza-grid">
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Hawaiana</h3>
+                        <p>Jamón, piña, mozzarella y salsa de tomate</p>
+                    </div>
+                    <img src="img/hawaiana.png" alt="Pizza Hawaiana">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Vegetariana</h3>
+                        <p>Pimientos, champiñones, cebolla, aceitunas y tomate</p>
+                    </div>
+                    <img src="img/vegetariana.png" alt="Pizza Vegetariana">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Napolitana</h3>
+                        <p>Tomate, mozzarella, anchoas y orégano</p>
+                    </div>
+                    <img src="img/napolitana.png" alt="Pizza Napolitana">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Pollo y Champiñones</h3>
+                        <p>Pollo, champiñones frescos y mozzarella</p>
+                    </div>
+                    <img src="img/pollo_champinones.png" alt="Pizza Pollo y Champiñones">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Especial de Carnes</h3>
+                        <p>Combinación de carnes selectas y mozzarella</p>
+                    </div>
+                    <img src="img/carnes.png" alt="Pizza Especial de Carnes">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍕 Pizza Pollo, Maíz y Tocineta</h3>
+                        <p>Pollo, maíz dulce, tocineta crujiente y mozzarella</p>
+                    </div>
+                    <img src="img/pollo_maiz.png" alt="Pizza Pollo, Maíz y Tocineta">
+                </div>
+            </div>
+
+            <!-- Categoría: Porciones de Pizza -->
+            <h2 class="menu-category">🍰 Porciones de Pizza</h2>
+            <div class="pizza-grid">
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>Porción Individual</h3>
+                        <p>Cualquier variedad de nuestras pizzas en porción</p>
+                        <div class="price">$6,000</div>
+                    </div>
+                    <img src="img/porcion.png" alt="Porción de Pizza">
+                </div>
+            </div>
+
+            <!-- Categoría: Panzerotti -->
+            <h2 class="menu-category">🥟 Panzerotti</h2>
+            <p class="category-info">Desde $13,000</p>
+            <div class="pizza-grid">
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Jamón y Queso</h3>
+                        <p>Jamón y queso mozzarella en masa frita</p>
+                    </div>
+                    <img src="img/panzerotti_jamon.png" alt="Panzerotti Jamón y Queso">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Hawaiano</h3>
+                        <p>Jamón, piña y queso mozzarella</p>
+                    </div>
+                    <img src="img/panzerotti_hawaiano.png" alt="Panzerotti Hawaiano">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Italiano</h3>
+                        <p>Ingredientes tradicionales italianos</p>
+                    </div>
+                    <img src="img/panzerotti_italiano.png" alt="Panzerotti Italiano">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Romano</h3>
+                        <p>Especialidad romana con quesos selectos</p>
+                    </div>
+                    <img src="img/panzerotti_romano.png" alt="Panzerotti Romano">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Pollo y Champiñones</h3>
+                        <p>Pollo y champiñones frescos</p>
+                    </div>
+                    <img src="img/panzerotti_pollo.png" alt="Panzerotti Pollo y Champiñones">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🥟 Panzerotti Vegetariano</h3>
+                        <p>Vegetales frescos y queso mozzarella</p>
+                    </div>
+                    <img src="img/panzerotti_veggie.png" alt="Panzerotti Vegetariano">
+                </div>
+            </div>
+
+            <!-- Categoría: Lasagna -->
+            <h2 class="menu-category">🍝 Lasagna</h2>
+            <p class="category-info">$16,000</p>
+            <div class="pizza-grid">
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍝 Lasagna Pollo y Champiñones</h3>
+                        <p>Capas de pasta con pollo y champiñones</p>
+                    </div>
+                    <img src="img/lasagna_pollo.png" alt="Lasagna Pollo y Champiñones">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍝 Lasagna Boloñesa</h3>
+                        <p>La clásica lasagna con carne boloñesa</p>
+                    </div>
+                    <img src="img/lasagna_bolognesa.png" alt="Lasagna Boloñesa">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍝 Lasagna Vegetariana</h3>
+                        <p>Vegetales frescos y queso gratinado</p>
+                    </div>
+                    <img src="img/lasagna_veggie.png" alt="Lasagna Vegetariana">
+                </div>
+                <div class="pizza-card">
+                    <div class="pizza-card-content">
+                        <h3>🍝 Lasagna Tocineta con Champiñones y Pollo</h3>
+                        <p>Tocineta crujiente, champiñones y pollo</p>
+                    </div>
+                    <img src="img/lasagna_tocineta.png" alt="Lasagna Tocineta con Champiñones y Pollo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

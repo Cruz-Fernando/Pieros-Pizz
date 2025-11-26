@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - Piero's Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="Piero's Pizza Logo"
+                style="width: 100%; max-width: 200px; margin-bottom: 10px;">
+            <p>La mejor pizza de Colombia</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Inicio</a></li>
+                <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
+                <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
+                <li><a href="nosotros.html" class="nav-link active">👥 Quiénes Somos</a></li>
+                <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
+                <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section class="content-section active">
+            <h1>Quiénes Somos</h1>
+            <p style="font-size: 18px; line-height: 1.8; color: #495057;">
+                Piero's Pizza nació de la pasión por la auténtica pizza italiana. Trajimos las recetas tradicionales y
+                las adaptamos con el sabor colombiano, creando pizzas únicas que conquistan paladares.
+            </p>
+            <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
+                Nuestro compromiso es simple: ingredientes frescos, recetas auténticas y un servicio cálido que te haga
+                sentir como en casa. Cada pizza que sale de nuestro horno cuenta una historia de tradición y amor por la
+                gastronomía.
+            </p>
+            <div style="margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 15px;">
+                <h3 style="color: #ff6b6b; margin-bottom: 15px;">Nuestros Valores</h3>
+                <p><strong>🎯 Calidad:</strong> Solo los mejores ingredientes</p>
+                <br>
+                <p><strong>🌱 Frescura:</strong> Ingredientes de la más alta calidad</p>
+                <br>
+                <p><strong>🍽️ Sabor:</strong> Recetas auténticas con el mejor sabor</p>
+                <br>
+                <p><strong>❤️ Pasión:</strong> Amor en cada preparación</p>
+                <br>
+                <p><strong>👨‍👩‍👧‍👦 Familia:</strong> Tratamos a cada cliente como parte de nuestra familia</p>
+                <br>
+                <p><strong>🇮🇹 Tradición:</strong> Recetas auténticas de Italia</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

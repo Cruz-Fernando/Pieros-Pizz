@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios - Piero's Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="Piero's Pizza Logo"
+                style="width: 100%; max-width: 200px; margin-bottom: 10px;">
+            <p>La mejor pizza de Colombia</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">🏠 Inicio</a></li>
+                <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
+                <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
+                <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
+                <li><a href="horarios.html" class="nav-link active">🕐 Horarios</a></li>
+                <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section class="content-section active">
+            <h1>Horarios de Atención</h1>
+            <div class="contact-info">
+                <p><strong>Lunes a Sábado:</strong> 5:00 PM - 10:00 PM</p>
+                <p><strong>Domingo y Festivos:</strong> 5:00 PM - 10:00 PM</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 16px; color: #495057;">
+                También ofrecemos servicio de delivery y take-out. ¡Llámanos para hacer tu pedido!
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
