@@ -54,6 +54,37 @@ function checkRestaurantStatus() {
     }
 }
 
+// Función para crear estrellas doradas brillantes
+function createStar() {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.textContent = '✨';
+
+    // Posición aleatoria
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    star.style.top = Math.random() * window.innerHeight + 'px';
+
+    // Delay aleatorio para animación
+    star.style.animationDelay = Math.random() * 2 + 's';
+    star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+    document.body.appendChild(star);
+
+    // Eliminar la estrella después de que termine la animación
+    setTimeout(() => {
+        star.remove();
+    }, 4000);
+}
+
+// Generar estrellas periódicamente
+function generateStars() {
+    // Crear 2-3  estrellas al azar
+    const starCount = Math.floor(Math.random() * 2) + 2;
+    for (let i = 0; i < starCount; i++) {
+        setTimeout(() => createStar(), Math.random() * 1000);
+    }
+}
+
 // Cerrar el menú al hacer clic en un enlace (móvil)
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -78,4 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Actualizar el estado cada minuto
     setInterval(checkRestaurantStatus, 60000); // 60000 ms = 1 minuto
+
+    // Iniciar generación de estrellas
+    generateStars(); // Primera generación inmediata
+    setInterval(generateStars, 3000); // Cada 3 segundos
 });
