@@ -122,9 +122,90 @@ body {
     background: white;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s;
+    box-shadow:
+        0 0 0 3px #FFD700,
+        0 0 0 6px #DAA520,
+        0 0 20px rgba(218, 165, 32, 0.5),
+        0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s, goldenPulse 4s ease-in-out infinite;
     position: relative;
+}
+
+/* Animación de brillo pulsante para los bordes */
+@keyframes goldenPulse {
+    0% {
+        box-shadow:
+            0 0 0 3px #DAA520,
+            0 0 0 6px rgba(218, 165, 32, 0.5),
+            0 0 15px rgba(218, 165, 32, 0.3),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    25% {
+        box-shadow:
+            0 0 0 3px #FFD700,
+            0 0 0 6px #DAA520,
+            0 0 25px rgba(255, 215, 0, 0.6),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 3px #FFA500,
+            0 0 0 6px #FFD700,
+            0 0 35px rgba(255, 215, 0, 0.9),
+            0 0 50px rgba(255, 165, 0, 0.5),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    75% {
+        box-shadow:
+            0 0 0 3px #FFD700,
+            0 0 0 6px #DAA520,
+            0 0 25px rgba(255, 215, 0, 0.6),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 3px #DAA520,
+            0 0 0 6px rgba(218, 165, 32, 0.5),
+            0 0 15px rgba(218, 165, 32, 0.3),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Brillos aleatorios */
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #FFD700 0%, #FFA500 50%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: sparkleAnimation 2s ease-out forwards;
+    box-shadow:
+        0 0 10px #FFD700,
+        0 0 20px #FFA500,
+        0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(360deg);
+    }
 }
 
 .content-section.active {
