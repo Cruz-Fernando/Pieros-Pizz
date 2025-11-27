@@ -19,7 +19,7 @@ body {
             transparent 35px,
             rgba(139, 0, 0, 0.08) 35px,
             rgba(139, 0, 0, 0.08) 70px),
-        linear-gradient(135deg, #1a472a 0%, #2 5a3d 25%, #8b0000 50%, #a52a2a 75%, #1a472a 100%);
+        linear-gradient(135deg, #1a472a 0%, #2d5a3d 25%, #8b0000 50%, #a52a2a 75%, #1a472a 100%);
     background-size:
         200px 200px,
         100px 100px,
@@ -177,37 +177,32 @@ body::before {
     background: white;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s;
-    border: 3px solid;
-    border-image: linear-gradient(135deg, #DAA520, #FFD700, #FFA500, #FFD700, #DAA520) 1;
+    box-shadow:
+        0 0 0 3px #FFD700,
+        0 0 0 6px #DAA520,
+        0 0 20px rgba(218, 165, 32, 0.5),
+        0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s, goldenPulse 3s ease-in-out infinite;
     position: relative;
 }
 
-.content-section::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-    background: linear-gradient(135deg, #DAA520, #FFD700, #FFA500, #FFD700, #DAA520);
-    border-radius: 20px;
-    z-index: -1;
-    animation: goldenShine 3s ease-in-out infinite;
-}
-
-@keyframes goldenShine {
+@keyframes goldenPulse {
 
     0%,
     100% {
-        opacity: 0.6;
-        filter: brightness(1);
+        box-shadow:
+            0 0 0 3px #FFD700,
+            0 0 0 6px #DAA520,
+            0 0 20px rgba(218, 165, 32, 0.5),
+            0 10px 40px rgba(0, 0, 0, 0.2);
     }
 
     50% {
-        opacity: 1;
-        filter: brightness(1.4);
+        box-shadow:
+            0 0 0 3px #FFA500,
+            0 0 0 6px #FFD700,
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 10px 40px rgba(0, 0, 0, 0.2);
     }
 }
 
