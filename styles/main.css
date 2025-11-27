@@ -1,0 +1,142 @@
+/* Estilos Base y Globales */
+
+/* Reset y Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS */
+:root {
+    --color-primary: #ff6b6b;
+    --color-primary-dark: #ff5252;
+    --color-secondary: #1a472a;
+    --color-secondary-light: #2d5a3d;
+    --color-gold: #DAA520;
+    --color-gold-light: #FFD700;
+    --color-gold-bright: #FFA500;
+    --color-text-dark: #2d3436;
+    --color-text-light: #495057;
+    --color-text-gray: #666;
+    --color-whatsapp: #25D366;
+    --color-whatsapp-dark: #128C7E;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --border-radius-sm: 8px;
+    --border-radius-md: 15px;
+    --border-radius-lg: 20px;
+    --border-radius-pill: 50px;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 20%, #8b0000 50%, #a52a2a 80%, var(--color-secondary) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Títulos */
+h1 {
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* Contenido Principal */
+.content {
+    margin-left: 0;
+    padding: 100px 40px 40px 40px;
+    transition: margin-left 0.3s;
+    position: relative;
+    z-index: 3;
+}
+
+.content-section {
+    display: none;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    box-shadow:
+        0 0 0 3px var(--color-gold-light),
+        0 0 0 6px var(--color-gold),
+        0 0 20px rgba(218, 165, 32, 0.5),
+        0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s, goldenPulse 4s ease-in-out infinite;
+    position: relative;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Animaciones Globales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goldenPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 3px var(--color-gold),
+            0 0 0 6px rgba(218, 165, 32, 0.5),
+            0 0 15px rgba(218, 165, 32, 0.3),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 3px var(--color-gold-bright),
+            0 0 0 6px var(--color-gold-light),
+            0 0 35px rgba(255, 215, 0, 0.9),
+            0 0 50px rgba(255, 165, 0, 0.5),
+            0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Sparkle Animation */
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--color-gold-light) 0%, var(--color-gold-bright) 50%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: sparkleAnimation 2s ease-out forwards;
+    box-shadow:
+        0 0 10px var(--color-gold-light),
+        0 0 20px var(--color-gold-bright),
+        0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(360deg);
+    }
+}

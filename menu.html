@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú - Piero's Pizza</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Estilos CSS Modulares -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 
 <body>
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+    <!-- Botón de menú móvil -->
+    <button class="menu-toggle" onclick="NavigationController.toggleMenu()">☰ Menú</button>
 
-    <div class="overlay" onclick="toggleMenu()"></div>
+    <!-- Overlay -->
+    <div class="overlay" onclick="NavigationController.toggleMenu()"></div>
 
+    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
             <img src="img/logo.png" alt="Piero's Pizza Logo"
@@ -31,8 +37,9 @@
         </nav>
     </aside>
 
+    <!-- Contenido Principal -->
     <main class="content">
-        <section class="content-section active">
+        <section class="content-section active" id="menuContent">
             <div style="text-align: center; margin-bottom: 20px;">
                 <img src="img/logo.png" alt="Piero's Pizza Logo" style="max-width: 200px; margin-bottom: 10px;">
             </div>
@@ -40,465 +47,39 @@
             <p style="text-align: center; color: #666; margin-bottom: 30px;">Haz clic en cada categoría para ver
                 nuestros productos</p>
 
-            <!-- Categoría: Pizzas -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('pizzas')">
-                    <span>🍕 Pizzas</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="pizzas">
-                    <div style="text-align: center; margin-bottom: 15px;">
-                        <img src="img/logo.png" alt="Logo" style="max-width: 120px; opacity: 0.9;">
-                    </div>
-                    <p class="size-info">Disponibles en 3 tamaños: Pequeña | Mediana | Grande</p>
-                    <div style="text-align: center; margin: 20px 0;">
-                        <img src="img/pizza_real.png" alt="Pizzas" style="max-width: 300px; border-radius: 10px;">
-                    </div>
-
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <h3>Napolitana</h3>
-                            <p>Tomate, mozzarella, anchoas y orégano</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Italiana</h3>
-                            <p>Salsa especial con ingredientes italianos</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Romana</h3>
-                            <p>Especialidad romana</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Tricolor</h3>
-                            <p>Tres quesos selectos</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Hawaiana</h3>
-                            <p>Jamón, piña y mozzarella</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pollo</h3>
-                            <p>Pollo y mozzarella</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Jamón</h3>
-                            <p>Jamón y mozzarella</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pollo y Champiñones</h3>
-                            <p>Pollo con champiñones frescos</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Champiñones</h3>
-                            <p>Champiñones frescos y mozzarella</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Vegetariana</h3>
-                            <p>Vegetales frescos selectos</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pollo con Piñones</h3>
-                            <p>Pollo y piñones</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Salami y Champiñones</h3>
-                            <p>Salami con champiñones</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Anchoas y Champiñones</h3>
-                            <p>Anchoas con champiñones</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pepperoni y Champiñones</h3>
-                            <p>Pepperoni con champiñones</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Especial</h3>
-                            <p>Nuestra pizza especial de la casa</p>
-                            <div class="prices">
-                                <span>Pequeña: $35,000</span>
-                                <span>Mediana: $45,000</span>
-                                <span>Grande: $60,000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-subsection">
-                        <h4>🍰 Porciones de Pizza</h4>
-                        <div class="menu-item">
-                            <h3>Porción Individual</h3>
-                            <p>Cualquier variedad</p>
-                            <div class="price-single">$6,000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría: Lasagna -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('lasagna')">
-                    <span>🍝 Lasagna</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="lasagna">
-                    <div style="text-align: center; margin-bottom: 15px;">
-                        <img src="img/logo.png" alt="Logo" style="max-width: 100px; opacity: 0.85;">
-                    </div>
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <h3>Lasagna Piero's</h3>
-                            <p>Carne bolognesa (especialidad)</p>
-                            <div class="price-single">$25,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Italiana</h3>
-                            <p>Receta tradicional italiana</p>
-                            <div class="price-single">$25,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Napolitana</h3>
-                            <p>Estilo napolitano</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Tricolor</h3>
-                            <p>Tres quesos especiales</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Hawaiana</h3>
-                            <p>Con jamón y piña</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Pollo</h3>
-                            <p>Con pollo desmenuzado</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Lasagna Jamón</h3>
-                            <p>Con jamón especial</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría: Espagueti -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('espagueti')">
-                    <span>🍝 Espagueti</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="espagueti">
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <h3>Napolitano</h3>
-                            <p>Salsa napolitana tradicional</p>
-                            <div class="price-single">$25,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Boloñesa</h3>
-                            <p>Con carne boloñesa</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Italiana</h3>
-                            <p>Receta italiana clásica</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Carbonara</h3>
-                            <p>Con crema y tocineta</p>
-                            <div class="price-single">$27,000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría: Panzerotti -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('panzerotti')">
-                    <span>🥟 Panzerotti</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="panzerotti">
-                    <div style="text-align: center; margin: 15px 0;">
-                        <img src="img/logo.png" alt="Logo"
-                            style="max-width: 100px; opacity: 0.85; margin-bottom: 10px;">
-                    </div>
-                    <div style="text-align: center; margin: 20px 0;">
-                        <img src="img/panzerotti_jamon.png" alt="Panzerotti"
-                            style="max-width: 250px; border-radius: 10px;">
-                    </div>
-
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <h3>Italiana</h3>
-                            <p>Relleno italiano tradicional</p>
-                            <div class="price-single">$16,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Romano</h3>
-                            <p>Especialidad romana</p>
-                            <div class="price-single">$16,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Tricolor</h3>
-                            <p>Tres quesos</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Hawaiana</h3>
-                            <p>Jamón y piña</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pollo y Champiñones</h3>
-                            <p>Pollo con champiñones</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Jamón</h3>
-                            <p>Jamón y queso</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Queso</h3>
-                            <p>Queso mozzarella</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Pollo</h3>
-                            <p>Relleno de pollo</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-
-                        <div class="menu-item">
-                            <h3>Champiñones y Tocineta</h3>
-                            <p>Champiñones con tocineta</p>
-                            <div class="price-single">$18,000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría: Cannelloni y Ravioli -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('pasta-rellena')">
-                    <span>🍽️ Cannelloni & Ravioli</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="pasta-rellena">
-                    <div class="menu-subsection">
-                        <h4>Cannelloni</h4>
-                        <div class="menu-items-grid">
-                            <div class="menu-item">
-                                <h3>Cannelloni de Carne y Pollo</h3>
-                                <div class="price-single">$27,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Cannelloni Florentina</h3>
-                                <div class="price-single">$25,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Cannelloni Champiñones</h3>
-                                <div class="price-single">$25,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Cannelloni de Pollo</h3>
-                                <div class="price-single">$25,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Cannelloni de Espinaca y Queso</h3>
-                                <div class="price-single">$27,000</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-subsection">
-                        <h4>Ravioli</h4>
-                        <div class="menu-items-grid">
-                            <div class="menu-item">
-                                <h3>Ravioli de Carne y Queso</h3>
-                                <div class="price-single">$25,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Ravioli de Espinaca y Queso</h3>
-                                <div class="price-single">$25,000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría: Hamburguesas y Perros -->
-            <div class="menu-accordion">
-                <button class="accordion-header" onclick="toggleAccordion('comida-rapida')">
-                    <span>🍔 Hamburguesas & Perros</span>
-                    <span class="accordion-icon">▼</span>
-                </button>
-                <div class="accordion-content" id="comida-rapida">
-                    <div class="menu-subsection">
-                        <h4>🍔 Hamburguesas</h4>
-                        <div class="menu-items-grid">
-                            <div class="menu-item">
-                                <h3>Hamburguesa Sencilla</h3>
-                                <div class="price-single">$16,000</div>
-                            </div>
-
-                            <div class="menu-item">
-                                <h3>Hamburguesa Especial</h3>
-                                <div class="price-single">$27,000</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-subsection">
-                        <h4>🌭 Perros</h4>
-                        <div class="menu-items-grid">
-                            <div class="menu-item">
-                                <h3>Perro Sencillo</h3>
-                                <div class="price-single">$14,000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- El menú se genera dinámicamente desde MenuAccordionView -->
+            <div id="accordion-container"></div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Scripts MVC -->
+    <!-- Models -->
+    <script src="models/restaurant.js"></script>
+    <script src="models/menu.js"></script>
+
+    <!-- Views -->
+    <script src="views/components/sidebar.js"></script>
+    <script src="views/components/statusWidget.js"></script>
+    <script src="views/components/menuAccordion.js"></script>
+    <script src="views/pages/menu.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/navigationController.js"></script>
+    <script src="controllers/statusController.js"></script>
+    <script src="controllers/menuController.js"></script>
+
+    <!-- Utils & App -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Script para renderizar el menú dinámicamente -->
     <script>
-        // Función para toggle de acordeón
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const allContents = document.querySelectorAll('.accordion-content');
-            const allHeaders = document.querySelectorAll('.accordion-header');
-
-            // Cerrar todos los demás
-            allContents.forEach(item => {
-                if (item.id !== id) {
-                    item.classList.remove('active');
-                }
-            });
-
-            allHeaders.forEach(header => {
-                if (!header.nextElementSibling || header.nextElementSibling.id !== id) {
-                    header.classList.remove('active');
-                }
-            });
-
-            // Toggle el actual
-            content.classList.toggle('active');
-            content.previousElementSibling.classList.toggle('active');
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('accordion-container');
+            if (container) {
+                container.innerHTML = MenuAccordionView.renderAll();
+            }
+        });
     </script>
 </body>
 
