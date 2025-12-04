@@ -1,8 +1,0 @@
-Próximos Pasos Recomendados
-Ahora que el proyecto tiene una arquitectura sólida MVC, se puede:
-
-1. Agregar más páginas dinámicamente usando los componentes existentes
-2. Implementar un carrito de compras siguiendo el patrón MVC
-3. Agregar filtros al menú (por precio, categoría, etc.)
-4. Crear un sistema de pedidos integrado con WhatsApp
-5. Migrar a un framework (React, Vue) manteniendo la estructura MVC

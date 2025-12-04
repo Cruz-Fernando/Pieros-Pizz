@@ -8,35 +8,29 @@
     <!-- Estilos CSS Modulares -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/promo.css">
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
 
 <body>
-    <!-- Botón de menú móvil -->
-    <button class="menu-toggle" onclick="NavigationController.toggleMenu()">☰ Menú</button>
-
-    <!-- Overlay -->
-    <div class="overlay" onclick="NavigationController.toggleMenu()"></div>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="img/logo.png" alt="Piero's Pizza Logo" loading="lazy"
-                style="width: 100%; max-width: 200px; margin-bottom: 10px;">
-            <p>La mejor pizza de Colombia</p>
+    <!-- Header con Navegación Horizontal -->
+    <header class="header">
+        <div class="nav-container">
+            <img src="img/LogoPierosSinFondo.png" alt="Piero's Pizza Logo" class="header-logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">🏠 Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
+                    <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
+                    <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
+                    <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
+                    <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
+                </ul>
+            </nav>
+            <img src="img/pizza-reference.png" alt="Pizza" class="pizza-reference">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav-link active">🏠 Inicio</a></li>
-                <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
-                <li><a href="contacto.html" class="nav-link">📞 Contáctanos</a></li>
-                <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
-                <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
-                <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
-            </ul>
-        </nav>
-    </aside>
+    </header>
 
     <!-- Contenido Principal -->
     <main class="content">
@@ -108,20 +102,19 @@
     <script src="models/menu.js"></script>
 
     <!-- Views -->
-    <script src="views/components/sidebar.js"></script>
     <script src="views/components/statusWidget.js"></script>
     <script src="views/components/menuAccordion.js"></script>
     <script src="views/components/backToTop.js"></script>
     <script src="views/pages/home.js"></script>
 
     <!-- Controllers -->
-    <script src="controllers/navigationController.js"></script>
     <script src="controllers/statusController.js"></script>
     <script src="controllers/menuController.js"></script>
 
     <!-- Utils & App -->
     <script src="js/utils.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js"></script>`r`n    <script src="js/header-scroll.js"></script>
 </body>
 
 </html>
+
