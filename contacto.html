@@ -13,23 +13,28 @@
 </head>
 
 <body>
-    <!-- Header con Navegación Horizontal -->
-    <header class="header">
-        <div class="nav-container">
-            <img src="img/LogoPierosSinFondo.png" alt="Piero's Pizza Logo" class="header-logo">
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">🏠 Inicio</a></li>
-                    <li><a href="menu.html" class="nav-link">📋 Menú</a></li>
-                    <li><a href="contacto.html" class="nav-link active">📞 Contáctanos</a></li>
-                    <li><a href="nosotros.html" class="nav-link">👥 Quiénes Somos</a></li>
-                    <li><a href="horarios.html" class="nav-link">🕐 Horarios</a></li>
-                    <li><a href="ubicacion.html" class="nav-link">📍 Ubicación</a></li>
-                </ul>
-            </nav>
-            <img src="img/pizza-reference.png" alt="Pizza" class="pizza-reference">
+    <!-- Botón Flotante de Menú -->
+    <button class="menu-button" aria-label="Menú de navegación">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </header>
+    </button>
+
+    <!-- Overlay de Menú -->
+    <div class="menu-overlay">
+        <img src="img/LogoPierosSinFondo.png" alt="Piero's Pizza Logo" class="menu-overlay-logo">
+        <nav class="menu-overlay-nav">
+            <a href="index.html" class="menu-overlay-link">🏠 Inicio</a>
+            <a href="menu.html" class="menu-overlay-link">📋 Menú</a>
+            <a href="contacto.html" class="menu-overlay-link active">📞 Contáctanos</a>
+            <a href="nosotros.html" class="menu-overlay-link">👥 Quiénes Somos</a>
+            <a href="horarios.html" class="menu-overlay-link">🕐 Horarios</a>
+            <a href="ubicacion.html" class="menu-overlay-link">📍 Ubicación</a>
+        </nav>
+        <img src="img/pizza-reference.png" alt="Pizza" class="menu-overlay-pizza">
+    </div>
 
     <!-- Contenido Principal -->
     <main class="content">
@@ -66,8 +71,8 @@
 
     <!-- Utils & App -->
     <script src="js/utils.js"></script>
-    <script src="js/app.js"></script>`r`n    <script src="js/header-scroll.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/menu-overlay.js"></script>
 </body>
 
 </html>
-

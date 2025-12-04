@@ -5,6 +5,11 @@
 [![CSS3](https://img.shields.io/badge/CSS-3-blue.svg)](https://www.w3.org/Style/CSS/)
 [![HTML5](https://img.shields.io/badge/HTML-5-orange.svg)](https://html.spec.whatwg.org/)
 
+## Futuras Mejoras
+
+- Ser mas responsive
+- 
+
 Sitio web oficial de Piero's Pizza - "La mejor pizza de Colombia". Proyecto desarrollado con arquitectura MVC (Model-View-Controller) para garantizar código limpio, modular y fácil de mantener.
 
 ## 📋 Descripción

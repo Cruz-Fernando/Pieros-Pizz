@@ -1,217 +1,266 @@
-/* Header Navigation Styles */
-.header {
+/* Floating Menu Button & Overlay Styles */
+
+/* Botón Flotante */
+.menu-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.6);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.8);
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.menu-button:active {
+    transform: scale(0.95);
+}
+
+/* Icono del botón (hamburguesa) */
+.menu-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-icon span {
+    width: 100%;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-button.active .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.menu-button.active .menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Overlay del Menú */
+.menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    border-bottom: 3px solid #DAA520;
-    transition: transform 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
-}
-
-.header.hidden {
-    transform: translateY(-100%);
-}
-
-.header.shrink {
-    padding: 5px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.header.shrink .nav-container {
-    padding: 8px 40px;
-}
-
-.header.shrink .header-logo {
-    height: 45px;
-}
-
-.header.shrink .pizza-reference {
-    height: 38px;
-}
-
-.header.shrink .nav-link {
-    padding: 8px 15px;
-    font-size: 14px;
-}
-
-.nav-container {
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98) 0%, rgba(45, 45, 45, 0.98) 100%);
+    z-index: 1999;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.header-logo {
-    height: 60px;
-    width: auto;
-    transition: transform 0.3s ease, height 0.3s ease;
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.header-logo:hover {
-    transform: scale(1.05);
+/* Logo en el menú */
+.menu-overlay-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 40px;
+    animation: fadeInDown 0.6s ease;
 }
 
-.nav-menu {
+/* Navegación del Menú */
+.menu-overlay-nav {
     display: flex;
-    list-style: none;
-    gap: 5px;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
-.nav-menu li {
-    margin: 0;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
+.menu-overlay-link {
+    font-size: 28px;
     color: #FFD700;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    position: relative;
+    font-weight: 600;
+    padding: 15px 40px;
+    border-radius: 15px;
     border: 2px solid rgba(255, 215, 0, 0.3);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    min-width: 300px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
 }
 
-.nav-link:hover {
-    background: linear-gradient(135deg, rgba(218, 165, 32, 0.3) 0%, rgba(255, 215, 0, 0.25) 100%);
-    color: #FFA500;
-    transform: translateY(-2px);
+.menu-overlay-link:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu-overlay-link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu-overlay-link:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu-overlay-link:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu-overlay-link:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.menu-overlay-link:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.menu-overlay-link:hover {
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.4) 0%, rgba(255, 215, 0, 0.3) 100%);
     border-color: #FFD700;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
 }
 
-.nav-link.active {
+.menu-overlay-link.active {
     background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
     color: #1a1a1a;
+    border-color: #FFA500;
     font-weight: bold;
-    border: 2px solid #FFA500;
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.6);
 }
 
-.nav-link.active:hover {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+/* Imagen de Pizza en el menú */
+.menu-overlay-pizza {
+    width: 80px;
+    height: auto;
+    margin-top: 40px;
+    animation: fadeInUp 0.6s ease 0.7s both;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5);
 }
 
-.pizza-reference {
-    height: 50px;
-    width: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
-    transition: transform 0.3s ease, height 0.3s ease;
-    margin-left: 20px;
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.pizza-reference:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Adjust content padding for header */
+/* Ajuste del contenido principal */
 .content {
     margin-left: 0;
-    padding: 120px 40px 40px 40px;
+    padding: 40px;
     position: relative;
     z-index: 3;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .header {
-        border-bottom: 2px solid #DAA520;
+    .menu-button {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        left: 15px;
     }
 
-    .header.shrink {
-        padding: 3px 0;
+    .menu-icon {
+        width: 25px;
+        height: 20px;
     }
 
-    .header.shrink .nav-container {
-        padding: 6px 15px;
-        gap: 8px;
+    .menu-overlay-logo {
+        width: 120px;
+        margin-bottom: 30px;
     }
 
-    .header.shrink .header-logo {
-        height: 35px;
+    .menu-overlay-link {
+        font-size: 22px;
+        padding: 12px 30px;
+        min-width: 250px;
     }
 
-    .header.shrink .pizza-reference {
-        height: 30px;
-    }
-
-    .header.shrink .nav-link {
-        padding: 6px 10px;
-        font-size: 11px;
-        min-width: 100px;
-    }
-
-    .nav-container {
-        padding: 12px 15px;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .header-logo {
-        height: 50px;
-        order: 1;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: center;
-        width: 100%;
-        order: 3;
-    }
-
-    .nav-link {
-        padding: 10px 15px;
-        font-size: 13px;
-        flex: 1 1 auto;
-        min-width: 140px;
-        justify-content: center;
-        border-width: 2px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .pizza-reference {
-        height: 45px;
-        margin-left: 0;
-        order: 2;
-        box-shadow: 0 3px 12px rgba(218, 165, 32, 0.4);
+    .menu-overlay-pizza {
+        width: 60px;
+        margin-top: 30px;
     }
 
     .content {
-        padding: 200px 15px 20px 15px;
+        padding: 20px 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-link {
-        min-width: 120px;
-        font-size: 12px;
-        padding: 8px 12px;
+    .menu-button {
+        width: 50px;
+        height: 50px;
+        bottom: 12px;
+        left: 12px;
     }
 
-    .header-logo {
-        height: 40px;
+    .menu-icon {
+        width: 22px;
+        height: 18px;
     }
 
-    .pizza-reference {
-        height: 35px;
+    .menu-icon span {
+        height: 2.5px;
+    }
+
+    .menu-overlay-logo {
+        width: 100px;
+        margin-bottom: 25px;
+    }
+
+    .menu-overlay-link {
+        font-size: 18px;
+        padding: 10px 25px;
+        min-width: 200px;
+        gap: 15px;
+    }
+
+    .menu-overlay-pizza {
+        width: 50px;
+        margin-top: 25px;
     }
 }
