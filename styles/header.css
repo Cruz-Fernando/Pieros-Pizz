@@ -82,8 +82,8 @@
     visibility: visible;
 }
 
-/* Logo en el menú */
-.menu-overlay-logo {
+/* Imagen de referencia en el menú (centrada) */
+.menu-overlay-reference {
     width: 150px;
     height: auto;
     margin-bottom: 40px;
@@ -209,7 +209,7 @@
         height: 20px;
     }
 
-    .menu-overlay-logo {
+    .menu-overlay-reference {
         width: 120px;
         margin-bottom: 30px;
     }
@@ -247,7 +247,7 @@
         height: 2.5px;
     }
 
-    .menu-overlay-logo {
+    .menu-overlay-reference {
         width: 100px;
         margin-bottom: 25px;
     }
