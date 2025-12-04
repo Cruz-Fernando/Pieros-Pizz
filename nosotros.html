@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos - Piero's Pizza</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Estilos CSS Modulares -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 
 <body>
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+    <!-- Botón de menú móvil -->
+    <button class="menu-toggle" onclick="NavigationController.toggleMenu()">☰ Menú</button>
 
-    <div class="overlay" onclick="toggleMenu()"></div>
+    <!-- Overlay -->
+    <div class="overlay" onclick="NavigationController.toggleMenu()"></div>
 
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -60,7 +65,22 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Scripts MVC -->
+    <!-- Models -->
+    <script src="models/restaurant.js"></script>
+
+    <!-- Views -->
+    <script src="views/components/sidebar.js"></script>
+    <script src="views/components/statusWidget.js"></script>
+    <script src="views/components/backToTop.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/navigationController.js"></script>
+    <script src="controllers/statusController.js"></script>
+
+    <!-- Utils & App -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

@@ -16,9 +16,25 @@ const RestaurantModel = {
 
     // Información de contacto
     contact: {
-        phone: "+57 3046327574",
-        whatsapp: "573046327574",
-        whatsappLink: "https://wa.me/573046327574"
+        // Números de WhatsApp disponibles
+        phones: [
+            {
+                number: "+57 318 533 2199",
+                whatsapp: "573185332199",
+                whatsappLink: "https://wa.me/573185332199",
+                label: "WhatsApp 1"
+            },
+            {
+                number: "+57 314 789 7080",
+                whatsapp: "573147897080",
+                whatsappLink: "https://wa.me/573147897080",
+                label: "WhatsApp 2"
+            }
+        ],
+        // Mantener compatibilidad con código existente (primer número por defecto)
+        phone: "+57 318 533 2199",
+        whatsapp: "573185332199",
+        whatsappLink: "https://wa.me/573185332199"
     },
 
     // Métodos
@@ -43,13 +59,66 @@ const RestaurantModel = {
     },
 
     getStatus() {
-        const isOpen = this.isOpen();
+        const now = new Date();
+        const colombiaTime = new Date(now.toLocaleString("en-US", { timeZone: this.schedule.timezone }));
+
+        const currentHour = colombiaTime.getHours();
+        const currentMinute = colombiaTime.getMinutes();
+        const currentDay = colombiaTime.getDay();
+        const currentTimeInMinutes = currentHour * 60 + currentMinute;
+
+        // Verificar si está abierto ahora
+        if (this.isOpen()) {
+            return {
+                isOpen: true,
+                statusText: 'Abierto Ahora',
+                statusIcon: '✔',
+                statusClass: 'open'
+            };
+        }
+
+        // Si está cerrado, calcular cuándo abre
+        let nextOpenDay = currentDay;
+        let daysToAdd = 0;
+
+        // Si hoy es día de apertura pero aún no abre (es temprano)
+        if (this.schedule.daysOpen.includes(currentDay) && currentTimeInMinutes < (this.schedule.openingHour * 60)) {
+            // Abre hoy más tarde
+            const hoursUntil = this.schedule.openingHour - currentHour;
+            const minutesUntil = (this.schedule.openingHour * 60) - currentTimeInMinutes;
+
+            let timeText = "";
+            if (hoursUntil > 1) {
+                timeText = `Abre en ${hoursUntil} horas`;
+            } else {
+                timeText = `Abre en ${minutesUntil} minutos`;
+            }
+
+            return {
+                isOpen: false,
+                statusText: timeText,
+                statusIcon: '⏳',
+                statusClass: 'closed'
+            };
+        }
+
+        // Si ya cerró hoy o hoy no abre, buscar el siguiente día
+        // (Simplificado asumiendo que abre todos los días según la config actual, 
+        // pero preparado para lógica más compleja si cambia)
+
+        // Como abre todos los días (0-6), el próximo día es mañana
         return {
-            isOpen: isOpen,
-            statusText: isOpen ? 'Abierto Ahora' : 'Cerrado',
-            statusIcon: isOpen ? '✔' : '✘',
-            statusClass: isOpen ? 'open' : 'closed'
+            isOpen: false,
+            statusText: `Abre mañana a las ${this.formatHour(this.schedule.openingHour)}`,
+            statusIcon: '🌙',
+            statusClass: 'closed'
         };
+    },
+
+    formatHour(hour24) {
+        const period = hour24 >= 12 ? 'PM' : 'AM';
+        const hour12 = hour24 % 12 || 12;
+        return `${hour12}:00 ${period}`;
     }
 };
 

@@ -46,7 +46,7 @@ const MenuAccordionView = {
         let content = `
             <div class="accordion-content" id="${category.id}">
                 <div style="text-align: center; margin-bottom: 15px;">
-                    <img src="${RestaurantModel.logo}" alt="Logo" style="max-width: 120px; opacity: 0.9;">
+                    <img src="${RestaurantModel.logo}" alt="Logo" loading="lazy" style="max-width: 120px; opacity: 0.9;">
                 </div>
         `;
 
@@ -59,7 +59,7 @@ const MenuAccordionView = {
         if (category.image) {
             content += `
                 <div style="text-align: center; margin: 20px 0;">
-                    <img src="${category.image}" alt="${category.name}" style="max-width: 300px; border-radius: 10px;">
+                    <img src="${category.image}" alt="${category.name}" loading="lazy" style="max-width: 300px; border-radius: 10px;">
                 </div>
             `;
         }
@@ -98,6 +98,7 @@ const MenuAccordionView = {
         // Precios múltiples (para pizzas)
         if (item.prices) {
             itemHTML += '<div class="prices">';
+            if (item.prices.mini) itemHTML += `<span>Mini: $${item.prices.mini.toLocaleString('es-CO')}</span>`;
             if (item.prices.pequena) itemHTML += `<span>Pequeña: $${item.prices.pequena.toLocaleString('es-CO')}</span>`;
             if (item.prices.mediana) itemHTML += `<span>Mediana: $${item.prices.mediana.toLocaleString('es-CO')}</span>`;
             if (item.prices.grande) itemHTML += `<span>Grande: $${item.prices.grande.toLocaleString('es-CO')}</span>`;

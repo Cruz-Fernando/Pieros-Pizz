@@ -1,0 +1,180 @@
+/* Estilos del Banner Promocional y Botón de Menú */
+
+/* ===== MENU TOGGLE BUTTON ===== */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+.menu-toggle:hover {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff3838 50%, #c92a2a 100%);
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 25px 0;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    animation: promoPulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 70%);
+    transform: rotate(45deg);
+    animation: promoShine 4s ease-in-out infinite;
+}
+
+@keyframes promoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 12px 35px rgba(255, 107, 107, 0.7);
+    }
+}
+
+@keyframes promoShine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.promo-icon {
+    font-size: 48px;
+    animation: promoIconBounce 2s ease-in-out infinite;
+}
+
+@keyframes promoIconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.promo-text {
+    text-align: center;
+    color: white;
+}
+
+.promo-text h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.promo-text p {
+    font-size: 20px;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.promo-text strong {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: promoTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes promoTextGlow {
+
+    0%,
+    100% {
+        text-shadow:
+            2px 2px 4px rgba(0, 0, 0, 0.5),
+            0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        text-shadow:
+            2px 2px 4px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(255, 215, 0, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .promo-banner {
+        padding: 15px 20px;
+        margin: 20px 0;
+    }
+
+    .promo-icon {
+        font-size: 36px;
+    }
+
+    .promo-text h3 {
+        font-size: 22px;
+    }
+
+    .promo-text p {
+        font-size: 16px;
+    }
+
+    .promo-text strong {
+        font-size: 20px;
+    }
+}

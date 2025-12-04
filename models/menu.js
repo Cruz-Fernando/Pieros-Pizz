@@ -5,30 +5,62 @@ const MenuModel = {
             id: 'pizzas',
             name: '🍕 Pizzas',
             icon: '🍕',
-            info: 'Disponibles en 3 tamaños: Pequeña | Mediana | Grande',
+            info: 'Disponibles en 4 tamaños: Mini | Pequeña | Mediana | Grande',
             image: 'img/pizza_real.png',
             items: [
-                { name: 'Napolitana', description: 'Tomate, mozzarella, anchoas y orégano', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Italiana', description: 'Salsa especial con ingredientes italianos', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Romana', description: 'Especialidad romana', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Tricolor', description: 'Tres quesos selectos', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Hawaiana', description: 'Jamón, piña y mozzarella', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Pollo', description: 'Pollo y mozzarella', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Jamón', description: 'Jamón y mozzarella', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Pollo y Champiñones', description: 'Pollo con champiñones frescos', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Champiñones', description: 'Champiñones frescos y mozzarella', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Vegetariana', description: 'Vegetales frescos selectos', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Pollo con Piñones', description: 'Pollo y piñones', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Salami y Champiñones', description: 'Salami con champiñones', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Anchoas y Champiñones', description: 'Anchoas con champiñones', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Pepperoni y Champiñones', description: 'Pepperoni con champiñones', prices: { pequena: 35000, mediana: 45000, grande: 60000 } },
-                { name: 'Especial', description: 'Nuestra pizza especial de la casa', prices: { pequena: 35000, mediana: 45000, grande: 60000 } }
+                // Precios: carta física + incremento (pequeña +2k, mediana +3k, grande +5k)
+                { name: 'Riconetta', description: 'Pizza clásica riconetta', prices: { mini: 28000, pequena: 33000, mediana: 46000, grande: 60000 } },
+                { name: 'Pollo y Aceitunes', description: 'Pollo con aceitunas', prices: { mini: 28000, pequena: 33000, mediana: 46000, grande: 60000 } },
+                { name: 'Pollo Piña Anchoas', description: 'Mezcla de pollo, piña y anchoas', prices: { mini: 28000, pequena: 33000, mediana: 46000, grande: 60000 } },
+                { name: 'Pollo Piña', description: 'Pollo con piña', prices: { mini: 28000, pequena: 33000, mediana: 46000, grande: 60000 } },
+                { name: 'Pollo y Bocadillo', description: 'Pollo con bocadillo', prices: { mini: 28000, pequena: 33000, mediana: 46000, grande: 60000 } },
+
+                { name: 'Pollo y Champiñones', description: 'Pollo con champiñones frescos', prices: { mini: 30000, pequena: 35000, mediana: 50000, grande: 70000 } },
+                { name: 'Cebolla y Pepperoni', description: 'Cebolla con pepperoni', prices: { mini: 30000, pequena: 35000, mediana: 50000, grande: 70000 } },
+                { name: 'Salami y Champiñones', description: 'Salami con champiñones', prices: { mini: 30000, pequena: 35000, mediana: 50000, grande: 70000 } },
+                { name: 'Paly Pollo', description: 'Especialidad de pollo', prices: { mini: 30000, pequena: 35000, mediana: 50000, grande: 70000 } },
+                { name: 'Chorizo', description: 'Pizza con chorizo', prices: { mini: 30000, pequena: 35000, mediana: 50000, grande: 70000 } },
+
+                { name: 'Tomate Anchoas', description: 'Tomate con anchoas', prices: { mini: 30000, pequena: 37000, mediana: 52000, grande: 72000 } },
+                { name: 'Napolitana', description: 'Tomate, mozzarella, anchoas y orégano', prices: { mini: 30000, pequena: 37000, mediana: 52000, grande: 72000 } },
+                { name: 'Pizza Piña Jamón', description: 'Jamón y piña', prices: { mini: 30000, pequena: 37000, mediana: 52000, grande: 72000 } },
+
+                { name: 'Pizza Piña', description: 'Pizza con piña', prices: { mini: 30000, pequena: 39000, mediana: 54000, grande: 74000 } },
+                { name: 'Vegetariana', description: 'Vegetales frescos selectos', prices: { mini: 32000, pequena: 39000, mediana: 54000, grande: 74000 } },
+                { name: 'Hawaiana', description: 'Jamón, piña y mozzarella', prices: { mini: 32000, pequena: 39000, mediana: 54000, grande: 74000 } },
+
+                { name: 'Jamón', description: 'Jamón y mozzarella', prices: { mini: 33000, pequena: 41000, mediana: 57000, grande: 77000 } },
+                { name: 'Champiñones', description: 'Champiñones frescos y mozzarella', prices: { mini: 33000, pequena: 41000, mediana: 57000, grande: 77000 } },
+                { name: 'Queso', description: 'Queso mozzarella premium', prices: { mini: 33000, pequena: 41000, mediana: 57000, grande: 77000 } },
+
+                { name: 'Italiana', description: 'Salsa especial con ingredientes italianos', prices: { mini: 35000, pequena: 43000, mediana: 60000, grande: 80000 } },
+                { name: 'Pepperoni y Champiñones', description: 'Pepperoni con champiñones', prices: { mini: 35000, pequena: 43000, mediana: 60000, grande: 80000 } },
+                { name: 'Anchoas y Champiñones', description: 'Anchoas con champiñones', prices: { mini: 35000, pequena: 43000, mediana: 60000, grande: 80000 } },
+                { name: 'Pollo', description: 'Pollo y mozzarella', prices: { mini: 35000, pequena: 43000, mediana: 60000, grande: 80000 } },
+                { name: 'Pollo y Jamón', description: 'Combinación de pollo y jamón', prices: { mini: 35000, pequena: 43000, mediana: 60000, grande: 80000 } },
+
+                { name: 'Salami y Jamón', description: 'Salami con jamón', prices: { mini: 37000, pequena: 45000, mediana: 63000, grande: 83000 } },
+                { name: 'Pollo y Jamón y Piña', description: 'Trio especial', prices: { mini: 37000, pequena: 45000, mediana: 63000, grande: 83000 } },
+                { name: 'Pollo y Jamón y Chorizo', description: 'Combinación de carnes', prices: { mini: 37000, pequena: 45000, mediana: 63000, grande: 83000 } },
+                { name: 'Anchoas', description: 'Anchoas selectas', prices: { mini: 37000, pequena: 45000, mediana: 63000, grande: 83000 } },
+                { name: 'Tricolor', description: 'Tres quesos selectos', prices: { mini: 37000, pequena: 45000, mediana: 63000, grande: 83000 } },
+
+                { name: 'Romana', description: 'Especialidad romana', prices: { mini: 40000, pequena: 47000, mediana: 65000, grande: 85000 } },
+                { name: 'Pollo con Piñones', description: 'Pollo y piñones', prices: { mini: 40000, pequena: 47000, mediana: 65000, grande: 85000 } },
+                { name: 'Tomate', description: 'Tomate especial', prices: { mini: 40000, pequena: 47000, mediana: 65000, grande: 85000 } },
+                { name: 'Uvas Pasas', description: 'Con uvas pasas selectas', prices: { mini: 40000, pequena: 47000, mediana: 65000, grande: 85000 } },
+
+                { name: 'Piña y Anchoas', description: 'Combinación especial dulce y salada', prices: { mini: 42000, pequena: 49000, mediana: 68000, grande: 88000 } },
+                { name: 'Piña y Anchoas y Pollo', description: 'Trio gourmet', prices: { mini: 42000, pequena: 49000, mediana: 68000, grande: 88000 } },
+                { name: 'Uvas Pasas y Tocinet', description: 'Dulce con tocineta', prices: { mini: 42000, pequena: 49000, mediana: 68000, grande: 88000 } },
+                { name: 'Especial', description: 'Nuestra pizza especial de la casa', prices: { mini: 45000, pequena: 52000, mediana: 72000, grande: 92000 } }
             ],
             subsections: [
                 {
                     title: '🍰 Porciones de Pizza',
                     items: [
-                        { name: 'Porción Individual', description: 'Cualquier variedad', price: 6000 }
+                        { name: 'Porción Normal', description: 'Variedades tradicionales', price: 7000 },
+                        { name: 'Porción Especial', description: 'Variedades especiales', price: 8000 }
                     ]
                 }
             ]

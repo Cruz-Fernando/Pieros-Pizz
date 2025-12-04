@@ -27,6 +27,9 @@ const App = {
         if (document.querySelector('.accordion-header')) {
             MenuController.init();
         }
+
+        // Inicializar botón Volver Arriba
+        BackToTop.init();
     },
 
     /**
