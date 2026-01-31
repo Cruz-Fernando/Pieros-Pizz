@@ -14,6 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Permitir scroll en el body
                 document.body.style.overflow = '';
             }, 500); // Duración del fade out
-        }, 2500); // Duración de la animación del logo
+        }, 3000); // Duración de la animación del logo
     }
 });
