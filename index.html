@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Piero's Pizza - Auténtica pizza italiana en Colombia. Pide ya por WhatsApp.">
     <title>Inicio - Piero's Pizza</title>
+    <link rel="icon" type="image/png" href="img/LogoPierosSinFondo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Estilos CSS Modulares -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
@@ -60,24 +68,23 @@
                 </div>
             </div>
 
-            <p style="font-size: 18px; line-height: 1.8; color: #495057;">
+            <p class="intro-text">
                 Descubre el auténtico sabor de la pizza italiana en Colombia. En Piero's Pizza, preparamos nuestras
                 pizzas con ingredientes frescos y recetas tradicionales que conquistarán tu paladar.
             </p>
-            <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
+            <p class="intro-text intro-text--spaced">
                 Somos el lugar favorito de las familias que buscan la mejor pizza.
                 Nuestro horno y nuestra masa artesanal hacen la diferencia en cada
                 bocado. Una experiencia única que no puedes perderte.
             </p>
 
-            <div style="margin-top: 30px; text-align: center;">
-                <img src="img/pizza_real.png" alt="Pizza de Piero's" loading="lazy"
-                    style="width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+            <div class="hero-image-container">
+                <img src="img/pizza_real.png" alt="Pizza de Piero's" loading="lazy" class="hero-image">
             </div>
 
             <div class="cta-box" style="margin-top: 40px;">
                 <h2>¡Haz tu pedido hoy!</h2>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <div class="cta-buttons">
                     <a href="https://wa.me/573185332199" target="_blank" class="whatsapp-button">
                         <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor"

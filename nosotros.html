@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conoce la historia y valores de Piero's Pizza, tu pizzería italiana favorita en Colombia.">
     <title>Quiénes Somos - Piero's Pizza</title>
+    <link rel="icon" type="image/png" href="img/LogoPierosSinFondo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Estilos CSS Modulares -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/splash.css">
     <link rel="stylesheet" href="styles/splash.css">
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
@@ -47,31 +55,63 @@
     <main class="content">
         <section class="content-section active">
             <h1>Quiénes Somos</h1>
-            <p style="font-size: 18px; line-height: 1.8; color: #495057;">
+
+            <p class="intro-text">
                 Piero's Pizza nació de la pasión por la auténtica pizza italiana. Trajimos las recetas tradicionales y
                 las adaptamos con el sabor colombiano, creando pizzas únicas que conquistan paladares.
             </p>
-            <p style="font-size: 18px; line-height: 1.8; color: #495057; margin-top: 20px;">
+            <p class="intro-text intro-text--spaced">
                 Nuestro compromiso es simple: ingredientes frescos, recetas auténticas y un servicio cálido que te haga
                 sentir como en casa. Cada pizza que sale de nuestro horno cuenta una historia de tradición y amor por la
                 gastronomía.
             </p>
-            <div style="margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                <h3 style="color: #ff6b6b; margin-bottom: 15px;">Nuestros Valores</h3>
-                <p><strong>🎯 Calidad:</strong> Solo los mejores ingredientes</p>
-                <br>
-                <p><strong>🌱 Frescura:</strong> Ingredientes de la más alta calidad</p>
-                <br>
-                <p><strong>🍽️ Sabor:</strong> Recetas auténticas con el mejor sabor</p>
-                <br>
-                <p><strong>❤️ Pasión:</strong> Amor en cada preparación</p>
-                <br>
-                <p><strong>👨‍👩‍👧‍👦 Familia:</strong> Tratamos a cada cliente como parte de nuestra familia</p>
-                <br>
-                <p><strong>🇮🇹 Tradición:</strong> Recetas auténticas de Italia</p>
+
+            <!-- Valores en grid de tarjetas -->
+            <div class="values-section">
+                <h2 class="values-title">Nuestros Valores</h2>
+                <div class="values-grid">
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">🎯</div>
+                        <h3>Calidad</h3>
+                        <p>Solo los mejores ingredientes llegan a tu mesa.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">🌱</div>
+                        <h3>Frescura</h3>
+                        <p>Ingredientes seleccionados de la más alta calidad.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">🍽️</div>
+                        <h3>Sabor</h3>
+                        <p>Recetas auténticas con el mejor sabor italiano.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">❤️</div>
+                        <h3>Pasión</h3>
+                        <p>Amor genuino en cada preparación que hacemos.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">👨‍👩‍👧‍👦</div>
+                        <h3>Familia</h3>
+                        <p>Cada cliente es parte de nuestra familia.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-card__emoji">🇮🇹</div>
+                        <h3>Tradición</h3>
+                        <p>Recetas auténticas heredadas de la cocina italiana.</p>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
+
 
     <!-- Scripts MVC -->
     <!-- Models -->
