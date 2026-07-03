@@ -2,8 +2,9 @@
 const MenuModel = {
     categories: [
         {
-            id: 'pizzas',
-            name: '🍕 Pizzas',
+            id: 'pizzas-tradicionales',
+            parentArea: 'pizzas',
+            name: '🍕 Pizzas Tradicionales',
             icon: '🍕',
             info: 'Pequeña (8″) · Mediana (12″) · Grande (16″)',
             miniNotice: '🍕 Todas las pizzas MINI (6 porciones) cuestan $28.000',
@@ -43,32 +44,40 @@ const MenuModel = {
                 { name: 'Cebolla, Pepperoni y Tomate', description: 'Cebolla, pepperoni y tomate', prices: { pequena: 36000, mediana: 46000, grande: 67000 } },
                 { name: 'Pollo, Piña y Tocineta', description: 'Pollo, piña y tocineta', prices: { pequena: 37000, mediana: 47000, grande: 68000 } },
                 { name: 'Jamón, Anchoas y Pollo', description: 'Jamón, anchoas y pollo', prices: { pequena: 37000, mediana: 47000, grande: 68000 } }
-            ],
-            subsections: [
-                {
-                    title: '⭐ Pizzas Especiales',
-                    items: [
-                        { name: 'Piero\'s Especial', description: 'Jamón, salchicha, pollo, pepperoni, salami y chorizo', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
-                        { name: 'Diputado', description: 'Pimentas, aceitunas verdes, tocineta y cebolla', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
-                        { name: 'Alcalde', description: 'Tomate, salami, cebolla, champiñones y anchoas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
-                        { name: 'Tropical', description: 'Anchoas, piña, cerezas y brevas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
-                        { name: 'Piero\'s + Piña', description: 'Especial Piero\'s con piña', prices: { pequena: 43000, mediana: 53000, grande: 73000 } },
-                        { name: 'Piero\'s + Pimentón', description: 'Especial Piero\'s con pimentón', prices: { pequena: 43000, mediana: 53000, grande: 73000 } },
-                        { name: 'Piero\'s Super Especial de Verduras', description: 'Carnes, verduras y anchoas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } }
-                    ]
-                },
-                {
-                    title: '🍰 Porciones de Pizza (1 porción)',
-                    info: 'Sabores tradicionales $7.000 · Sabores especiales $8.000',
-                    items: [
-                        { name: 'Porción Tradicional', description: 'Sabores comunes del menú', price: 7000 },
-                        { name: 'Porción Especial', description: 'Sabores especiales del menú', price: 8000 }
-                    ]
-                }
+            ]
+        },
+        {
+            id: 'pizzas-especiales',
+            parentArea: 'pizzas',
+            name: '⭐ Pizzas Especiales',
+            icon: '⭐',
+            info: 'Pequeña (8″) · Mediana (12″) · Grande (16″)',
+            miniNotice: '🍕 Todas las pizzas MINI (6 porciones) cuestan $28.000',
+            showSizeLegend: true,
+            items: [
+                { name: 'Piero\'s Especial', description: 'Jamón, salchicha, pollo, pepperoni, salami y chorizo', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
+                { name: 'Diputado', description: 'Pimentas, aceitunas verdes, tocineta y cebolla', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
+                { name: 'Alcalde', description: 'Tomate, salami, cebolla, champiñones y anchoas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
+                { name: 'Tropical', description: 'Anchoas, piña, cerezas y brevas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } },
+                { name: 'Piero\'s + Piña', description: 'Especial Piero\'s con piña', prices: { pequena: 43000, mediana: 53000, grande: 73000 } },
+                { name: 'Piero\'s + Pimentón', description: 'Especial Piero\'s con pimentón', prices: { pequena: 43000, mediana: 53000, grande: 73000 } },
+                { name: 'Piero\'s Super Especial de Verduras', description: 'Carnes, verduras y anchoas', prices: { pequena: 40000, mediana: 50000, grande: 70000 } }
+            ]
+        },
+        {
+            id: 'porciones-pizza',
+            parentArea: 'pizzas',
+            name: '🍰 Porciones de Pizza (1 porción)',
+            icon: '🍰',
+            info: 'Sabores tradicionales $7.000 · Sabores especiales $8.000',
+            items: [
+                { name: 'Porción Tradicional', description: 'Sabores comunes del menú', price: 7000 },
+                { name: 'Porción Especial', description: 'Sabores especiales del menú', price: 8000 }
             ]
         },
         {
             id: 'lasagna',
+            parentArea: 'italiano',
             name: '🍝 Lasagna',
             icon: '🍝',
             image: 'img/lasagna_pollo.png',
@@ -79,6 +88,7 @@ const MenuModel = {
         },
         {
             id: 'panzerotti',
+            parentArea: 'italiano',
             name: '🥟 Panzerotti',
             icon: '🥟',
             image: 'img/panzerotti_jamon.png',
@@ -86,22 +96,23 @@ const MenuModel = {
                 { name: 'Italiano', description: 'Jamón, tomate, queso y orégano', price: 17000 },
                 { name: 'Romano', description: 'Tomate, anchoas, queso y orégano', price: 17000 },
                 { name: 'Trifásico', description: 'Pollo, jamón, pepperoni y queso', price: 17000 },
-                { name: 'Pollo', description: 'Relleno de pollo', price: 16000 },
-                { name: 'Vegetariano', description: 'Tomate, cebolla, pimentón, apio y champiñones', price: 16000 },
-                { name: 'Pollo y Champiñones', description: 'Pollo con champiñones', price: 16000 },
+                { name: 'Pollo', description: 'Relleno de pollo', price: 17000 },
+                { name: 'Vegetariano', description: 'Tomate, cebolla, pimentón, apio y champiñones', price: 17000 },
+                { name: 'Pollo y Champiñones', description: 'Pollo con champiñones', price: 17000 },
                 { name: 'Hawaiano', description: 'Jamón, piña y queso', price: 16000 },
                 { name: 'Jamón y Queso', description: 'Jamón y queso mozzarella', price: 15000 }
             ]
         },
         {
             id: 'crepes',
+            parentArea: 'italiano',
             name: '🥞 Crepes',
             icon: '🥞',
             info: 'En salsa blanca con queso gratinado',
             items: [
                 { name: 'Pollo con Champiñones', description: 'Pollo y champiñones', price: 28000 },
                 { name: 'Hawaiano', description: 'Jamón, queso y piña', price: 27000 },
-                { name: 'Vegetariano', description: 'Pimentón, cebolla, brócoli, aceituna, coliflor y champiñones', price: 27000 },
+                { name: 'Vegetariano', description: 'Pimenton cebolla brocoli aceituna coliflor y champiñones', price: 27000 },
                 { name: 'Pollo, Jamón y Champiñones', description: 'Pollo, jamón y champiñones', price: 28000 },
                 { name: 'Lomito de Res', description: 'Lomito de res', price: 28000 },
                 { name: 'Mexicano', description: 'Maíz, carne, chorizo picante, cebolla y pimentón', price: 30000 },
@@ -109,31 +120,39 @@ const MenuModel = {
             ]
         },
         {
-            id: 'pasta-rellena',
-            name: '🍽️ Cannelloni & Ravioli',
+            id: 'cannelloni',
+            parentArea: 'italiano',
+            name: '🍽️ Cannelloni',
             icon: '🍽️',
-            subsections: [
-                {
-                    title: 'Cannelloni',
-                    items: [
-                        { name: 'Cannelloni de Carne y Pollo', price: 28000 },
-                        { name: 'Cannelloni Florentina', price: 28000 },
-                        { name: 'Cannelloni Champiñones', price: 28000 },
-                        { name: 'Cannelloni Champiñones, Tocineta y Pollo', price: 29000 },
-                        { name: 'Cannelloni de Espinaca y Queso', price: 25000 }
-                    ]
-                },
-                {
-                    title: 'Ravioli',
-                    items: [
-                        { name: 'Ravioli de Carne y Queso', price: 25000 },
-                        { name: 'Ravioli de Espinaca y Queso', price: 25000 }
-                    ]
-                }
+            items: [
+                { name: 'Cannelloni de Carne y Pollo', price: 28000 },
+                { name: 'Cannelloni Florentina', price: 28000 },
+                { name: 'Cannelloni Champiñones', price: 28000 },
+                { name: 'Cannelloni Champiñones, Tocineta y Pollo', price: 29000 },
+                { name: 'Cannelloni de Espinaca y Queso', price: 25000 }
+            ]
+        },
+        {
+            id: 'espaguetis',
+            parentArea: 'italiano',
+            name: '🍝 Espaguetis',
+            icon: '🍝',
+            items: [
+                { name: 'Napolitano', description: 'Salsa napolitana con cuadritos de tomate y mozzarella', price: 18000 },
+                { name: 'Al burro', description: 'Mantequilla y queso parmesano', price: 27000 },
+                { name: 'Al olio', description: 'Salsa a base de ajo y aceite de oliva', price: 27000 },
+                { name: 'Al pesto', description: 'Salsa a base de albahaca en aceite de oliva, ajo y queso parmesano', price: 27000 },
+                { name: 'Carbonara', description: 'Huevos batidos con tocineta frita y queso parmesano', price: 27000 },
+                { name: 'Bolognesa', description: 'Salsa napolitana, carne molida y queso parmesano', price: 27000 },
+                { name: 'Putanesca', description: 'Salsa napolitana, tocineta, ajo, aceitunas negras y queso parmesano', price: 27000 },
+                { name: 'Arribialta (Arrabbiata)', description: 'Salsa napolitana, tocineta, ajo, peperoncino picante y albahaca', price: 27000 },
+                { name: 'A la divola (Diavola)', description: 'Salsa bolognesa con dos huevos fritos y salsa de ají picante', price: 27000 },
+                { name: 'Mediterránea', description: 'Camarones, champiñones y salsa napolitana', price: 27000 }
             ]
         },
         {
             id: 'comida-rapida',
+            parentArea: 'italiano',
             name: '🍔 Hamburguesas & Perros',
             icon: '🍔',
             subsections: [

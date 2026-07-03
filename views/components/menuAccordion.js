@@ -1,12 +1,58 @@
 // View Component: Menu Accordion (Acordeón del Menú)
 const MenuAccordionView = {
     /**
-     * Renderiza todos los acordeones del menú
-     * @returns {string} HTML de todos los acordeones
+     * Renderiza todos los acordeones del menú organizados por área padre
+     * @returns {string} HTML de todos los acordeones agrupados
      */
     renderAll() {
         const categories = MenuModel.getAllCategories();
-        return categories.map(category => this.renderCategory(category)).join('\n\n');
+        const pizzasCategories = categories.filter(cat => cat.parentArea === 'pizzas');
+        const italianoCategories = categories.filter(cat => cat.parentArea === 'italiano');
+
+        let html = '';
+
+        // Render parent area: PIZZAS
+        if (pizzasCategories.length > 0) {
+            html += `
+                <div class="menu-parent-area" id="area-pizzas">
+                    <div class="parent-area-header pizzas-header">
+                        <h2>🍕 Área PIZZAS</h2>
+                        <p class="parent-area-subtitle">Nuestras famosas pizzas artesanales de masa delgada y crujiente</p>
+                    </div>
+                    
+                    <!-- Aviso explosivo -->
+                    <div class="explosive-notice">
+                        <span class="explosive-notice__flash">💥</span>
+                        <div class="explosive-notice__content">
+                            <span class="explosive-notice__title">💥 ¡AVISO EXPLOSIVO! 💥</span>
+                            <span class="explosive-notice__text">La porción individual está a solo <strong>$7.000</strong> las tradicionales y <strong>$8.000</strong> las especiales.</span>
+                        </div>
+                        <span class="explosive-notice__flash">💥</span>
+                    </div>
+
+                    <div class="menu-accordions-group">
+                        ${pizzasCategories.map(category => this.renderCategory(category)).join('\n')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render parent area: Menú ITALIANO
+        if (italianoCategories.length > 0) {
+            html += `
+                <div class="menu-parent-area" id="area-italiano">
+                    <div class="parent-area-header italiano-header">
+                        <h2>🇮🇹 Menú ITALIANO</h2>
+                        <p class="parent-area-subtitle">Exquisitas especialidades, pastas tradicionales, crepes y delicias italianas</p>
+                    </div>
+                    <div class="menu-accordions-group">
+                        ${italianoCategories.map(category => this.renderCategory(category)).join('\n')}
+                    </div>
+                </div>
+            `;
+        }
+
+        return html;
     },
 
     /**
@@ -110,7 +156,7 @@ const MenuAccordionView = {
 
         if (category.items && category.items.length > 0) {
             content += '<div class="menu-items-grid">';
-            content += category.items.map(item => this.renderMenuItem(item)).join('\n');
+            content += category.items.map((item, index) => this.renderMenuItem(item, index + 1)).join('\n');
             content += '</div>';
         }
 
@@ -123,19 +169,20 @@ const MenuAccordionView = {
     },
 
     /**
-     * Renderiza un item del menú
+     * Renderiza un item del menú con su número e interactividad
      * @param {Object} item - Objeto del item
+     * @param {number} number - Número correlativo en su sección
      * @returns {string} HTML del item
      */
-    renderMenuItem(item) {
+    renderMenuItem(item, number) {
+        const displayName = number ? `${number}. ${item.name}` : item.name;
         let itemHTML = `
-            <article class="menu-item">
-                <h3>${item.name}</h3>
+            <article class="menu-item" onclick="this.classList.toggle('selected')">
+                <div class="menu-item__info">
+                    <h3>${displayName}</h3>
+                    ${item.description ? `<p>${item.description}</p>` : ''}
+                </div>
         `;
-
-        if (item.description) {
-            itemHTML += `<p>${item.description}</p>`;
-        }
 
         if (item.prices) {
             itemHTML += '<div class="price-grid">';
@@ -189,7 +236,7 @@ const MenuAccordionView = {
         }
 
         html += '<div class="menu-items-grid">';
-        html += subsection.items.map(item => this.renderMenuItem(item)).join('\n');
+        html += subsection.items.map((item, index) => this.renderMenuItem(item, index + 1)).join('\n');
         html += '</div></div>';
 
         return html;
