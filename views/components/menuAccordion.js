@@ -50,9 +50,20 @@ const MenuAccordionView = {
                 </div>
         `;
 
-        // Info de tamaños si existe
+        // Aviso MINI y leyenda de tamaños
+        if (category.miniNotice) {
+            content += `<p class="mini-notice">${category.miniNotice}</p>`;
+        }
+
         if (category.info) {
-            content += `<p class="size-info">${category.info}</p>`;
+            content += `
+                <p class="size-info">${category.info}</p>
+                <div class="size-legend">
+                    <span class="legend-item legend-pequena">Pequeña (8″)</span>
+                    <span class="legend-item legend-mediana">Mediana (12″)</span>
+                    <span class="legend-item legend-grande">Grande (16″)</span>
+                </div>
+            `;
         }
 
         // Imagen de categoría si existe
@@ -98,10 +109,15 @@ const MenuAccordionView = {
         // Precios múltiples (para pizzas)
         if (item.prices) {
             itemHTML += '<div class="prices">';
-            if (item.prices.mini) itemHTML += `<span>Mini: $${item.prices.mini.toLocaleString('es-CO')}</span>`;
-            if (item.prices.pequena) itemHTML += `<span>Pequeña: $${item.prices.pequena.toLocaleString('es-CO')}</span>`;
-            if (item.prices.mediana) itemHTML += `<span>Mediana: $${item.prices.mediana.toLocaleString('es-CO')}</span>`;
-            if (item.prices.grande) itemHTML += `<span>Grande: $${item.prices.grande.toLocaleString('es-CO')}</span>`;
+            if (item.prices.pequena) {
+                itemHTML += `<span class="price-pequena">Pequeña (8″): $${item.prices.pequena.toLocaleString('es-CO')}</span>`;
+            }
+            if (item.prices.mediana) {
+                itemHTML += `<span class="price-mediana">Mediana (12″): $${item.prices.mediana.toLocaleString('es-CO')}</span>`;
+            }
+            if (item.prices.grande) {
+                itemHTML += `<span class="price-grande">Grande (16″): $${item.prices.grande.toLocaleString('es-CO')}</span>`;
+            }
             itemHTML += '</div>';
         }
         // Precio único
@@ -123,6 +139,10 @@ const MenuAccordionView = {
 
         if (subsection.title) {
             html += `<h4>${subsection.title}</h4>`;
+        }
+
+        if (subsection.info) {
+            html += `<p class="portion-notice">${subsection.info}</p>`;
         }
 
         html += '<div class="menu-items-grid">';

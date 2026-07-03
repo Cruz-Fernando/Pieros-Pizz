@@ -599,6 +599,17 @@ h1 {
     padding: 25px;
 }
 
+.mini-notice {
+    background: #e8f4fd;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    color: #0d47a1;
+    margin-bottom: 12px;
+    border-left: 4px solid #1565c0;
+}
+
 .size-info {
     background: #fff3cd;
     padding: 12px;
@@ -606,8 +617,47 @@ h1 {
     text-align: center;
     font-weight: 600;
     color: #856404;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     border-left: 4px solid #ff6b6b;
+}
+
+.size-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.legend-pequena {
+    background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+}
+
+.legend-mediana {
+    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+}
+
+.legend-grande {
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+}
+
+.portion-notice {
+    background: #f8f9fa;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 15px;
+    border: 1px dashed #dee2e6;
 }
 
 .menu-items-grid {
@@ -651,12 +701,23 @@ h1 {
 }
 
 .prices span {
-    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
     color: white;
     padding: 6px 12px;
     border-radius: 15px;
     font-size: 12px;
     font-weight: bold;
+}
+
+.price-pequena {
+    background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+}
+
+.price-mediana {
+    background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+}
+
+.price-grande {
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
 }
 
 .price-single {
