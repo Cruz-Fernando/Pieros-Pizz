@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/splash.css">
+    <link rel="stylesheet" href="styles/menu.css">
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
 
-<body>
+<body class="menu-page">
     <!-- Splash Screen -->
     <div class="splash-screen">
         <img src="img/LogoPierosSinFondo.png" alt="Piero's Pizza" class="splash-logo">
@@ -53,43 +54,69 @@
     <!-- Contenido Principal -->
     <main class="content">
         <section class="content-section active" id="menuContent">
-            <h1>Nuestro Menú</h1>
-            <p style="text-align: center; color: #666; margin-bottom: 30px;">Haz clic en cada categoría para ver
-                nuestros productos</p>
 
-            <!-- El menú se genera dinámicamente desde MenuAccordionView -->
-            <div id="accordion-container"></div>
+            <header class="menu-hero">
+                <span class="menu-hero__badge">✨ Carta actualizada</span>
+                <h1>Nuestro Menú</h1>
+                <p class="menu-hero__subtitle">
+                    Descubre nuestras pizzas artesanales, pastas caseras y especialidades italianas.
+                    Toca una categoría o usa los accesos rápidos para explorar.
+                </p>
+                <div class="menu-hero__stats">
+                    <div class="menu-hero__stat">
+                        <strong>40</strong>
+                        <span>Pizzas</span>
+                    </div>
+                    <div class="menu-hero__stat">
+                        <strong>6</strong>
+                        <span>Categorías</span>
+                    </div>
+                    <div class="menu-hero__stat">
+                        <strong>4</strong>
+                        <span>Tamaños</span>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="menu-quick-nav" id="menuQuickNav" aria-label="Acceso rápido a categorías"></nav>
+
+            <div class="menu-accordions" id="accordion-container"></div>
+
+            <div class="menu-cta">
+                <p>¿Ya sabes qué quieres? ¡Haz tu pedido por WhatsApp!</p>
+                <a href="https://wa.me/573185332199?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%F0%9F%8D%95" class="menu-cta__btn" target="_blank" rel="noopener">
+                    📲 Pedir por WhatsApp
+                </a>
+            </div>
+
         </section>
     </main>
 
     <!-- Scripts MVC -->
-    <!-- Models -->
     <script src="models/restaurant.js"></script>
     <script src="models/menu.js"></script>
-
-    <!-- Views -->
     <script src="views/components/statusWidget.js"></script>
     <script src="views/components/menuAccordion.js"></script>
     <script src="views/components/backToTop.js"></script>
     <script src="views/pages/menu.js"></script>
-
-    <!-- Controllers -->
     <script src="controllers/navigationController.js"></script>
     <script src="controllers/statusController.js"></script>
     <script src="controllers/menuController.js"></script>
-
-    <!-- Utils & App -->
     <script src="js/utils.js"></script>
     <script src="js/app.js"></script>
     <script src="js/menu-overlay.js"></script>
     <script src="js/splash.js"></script>
 
-    <!-- Script para renderizar el menú dinámicamente -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('accordion-container');
+            const quickNav = document.getElementById('menuQuickNav');
+
             if (container) {
                 container.innerHTML = MenuAccordionView.renderAll();
+            }
+            if (quickNav) {
+                quickNav.innerHTML = MenuAccordionView.renderQuickNav();
             }
         });
     </script>

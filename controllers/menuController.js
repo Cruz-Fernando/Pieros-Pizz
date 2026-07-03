@@ -29,12 +29,15 @@ const MenuController = {
         allHeaders.forEach(header => {
             if (!header.nextElementSibling || header.nextElementSibling.id !== id) {
                 header.classList.remove('active');
+                header.setAttribute('aria-expanded', 'false');
             }
         });
 
         // Toggle el acordeón actual
-        content.classList.toggle('active');
-        content.previousElementSibling.classList.toggle('active');
+        const header = content.previousElementSibling;
+        const isOpen = content.classList.toggle('active');
+        header.classList.toggle('active');
+        header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     },
 
     /**
@@ -49,8 +52,10 @@ const MenuController = {
         this.closeAllAccordions();
 
         // Abrir el seleccionado
+        const header = content.previousElementSibling;
         content.classList.add('active');
-        content.previousElementSibling.classList.add('active');
+        header.classList.add('active');
+        header.setAttribute('aria-expanded', 'true');
     },
 
     /**
@@ -61,7 +66,25 @@ const MenuController = {
         const allHeaders = document.querySelectorAll('.accordion-header');
 
         allContents.forEach(item => item.classList.remove('active'));
-        allHeaders.forEach(header => header.classList.remove('active'));
+        allHeaders.forEach(header => {
+            header.classList.remove('active');
+            header.setAttribute('aria-expanded', 'false');
+        });
+    },
+
+    /**
+     * Abre una categoría y hace scroll suave hasta ella
+     * @param {string} id - ID de la categoría
+     */
+    jumpToCategory(id) {
+        this.openAccordion(id);
+
+        const accordion = document.getElementById(`accordion-${id}`);
+        if (accordion) {
+            setTimeout(() => {
+                accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
     }
 };
 

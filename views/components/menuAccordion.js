@@ -10,13 +10,37 @@ const MenuAccordionView = {
     },
 
     /**
+     * Obtiene el título limpio de una categoría (sin emoji)
+     * @param {Object} category
+     * @returns {string}
+     */
+    getCategoryTitle(category) {
+        return category.name.replace(category.icon, '').trim();
+    },
+
+    /**
+     * Cuenta los items de una categoría
+     * @param {Object} category
+     * @returns {number}
+     */
+    countItems(category) {
+        let count = category.items ? category.items.length : 0;
+        if (category.subsections) {
+            category.subsections.forEach(sub => {
+                count += sub.items ? sub.items.length : 0;
+            });
+        }
+        return count;
+    },
+
+    /**
      * Renderiza una categoría completa con acordeón
      * @param {Object} category - Objeto de categoría del menú
      * @returns {string} HTML de la categoría
      */
     renderCategory(category) {
         return `
-            <div class="menu-accordion">
+            <div class="menu-accordion" id="accordion-${category.id}">
                 ${this.renderHeader(category)}
                 ${this.renderContent(category)}
             </div>
@@ -29,9 +53,18 @@ const MenuAccordionView = {
      * @returns {string} HTML del header
      */
     renderHeader(category) {
+        const title = this.getCategoryTitle(category);
+        const count = this.countItems(category);
+
         return `
-            <button class="accordion-header" onclick="MenuController.toggleAccordion('${category.id}')">
-                <span>${category.name}</span>
+            <button class="accordion-header" onclick="MenuController.toggleAccordion('${category.id}')" aria-expanded="false">
+                <div class="accordion-header__main">
+                    <span class="accordion-header__icon">${category.icon}</span>
+                    <div class="accordion-header__text">
+                        <span class="accordion-header__title">${title}</span>
+                        <span class="accordion-header__meta">${count} ${count === 1 ? 'opción' : 'opciones'}</span>
+                    </div>
+                </div>
                 <span class="accordion-icon">▼</span>
             </button>
         `;
@@ -43,46 +76,44 @@ const MenuAccordionView = {
      * @returns {string} HTML del contenido
      */
     renderContent(category) {
-        let content = `
-            <div class="accordion-content" id="${category.id}">
-                <div style="text-align: center; margin-bottom: 15px;">
-                    <img src="${RestaurantModel.logo}" alt="Logo" loading="lazy" style="max-width: 120px; opacity: 0.9;">
-                </div>
-        `;
+        let content = `<div class="accordion-content" id="${category.id}">`;
 
-        // Aviso MINI y leyenda de tamaños
-        if (category.miniNotice) {
-            content += `<p class="mini-notice">${category.miniNotice}</p>`;
+        const hasNotices = category.miniNotice || category.info;
+        if (hasNotices) {
+            content += '<div class="menu-notices">';
+            if (category.miniNotice) {
+                content += `<p class="mini-notice">${category.miniNotice}</p>`;
+            }
+            if (category.info) {
+                const infoClass = category.showSizeLegend ? 'size-info' : 'category-notice';
+                content += `<p class="${infoClass}">${category.info}</p>`;
+                if (category.showSizeLegend) {
+                    content += `
+                        <div class="size-legend">
+                            <span class="legend-item legend-pequena">Pequeña (8″)</span>
+                            <span class="legend-item legend-mediana">Mediana (12″)</span>
+                            <span class="legend-item legend-grande">Grande (16″)</span>
+                        </div>
+                    `;
+                }
+            }
+            content += '</div>';
         }
 
-        if (category.info) {
-            content += `
-                <p class="size-info">${category.info}</p>
-                <div class="size-legend">
-                    <span class="legend-item legend-pequena">Pequeña (8″)</span>
-                    <span class="legend-item legend-mediana">Mediana (12″)</span>
-                    <span class="legend-item legend-grande">Grande (16″)</span>
-                </div>
-            `;
-        }
-
-        // Imagen de categoría si existe
         if (category.image) {
             content += `
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="${category.image}" alt="${category.name}" loading="lazy" style="max-width: 300px; border-radius: 10px;">
+                <div class="category-showcase">
+                    <img src="${category.image}" alt="${this.getCategoryTitle(category)}" loading="lazy">
                 </div>
             `;
         }
 
-        // Items principales
         if (category.items && category.items.length > 0) {
             content += '<div class="menu-items-grid">';
             content += category.items.map(item => this.renderMenuItem(item)).join('\n');
             content += '</div>';
         }
 
-        // Subsecciones si existen
         if (category.subsections && category.subsections.length > 0) {
             content += category.subsections.map(subsection => this.renderSubsection(subsection)).join('\n');
         }
@@ -98,7 +129,7 @@ const MenuAccordionView = {
      */
     renderMenuItem(item) {
         let itemHTML = `
-            <div class="menu-item">
+            <article class="menu-item">
                 <h3>${item.name}</h3>
         `;
 
@@ -106,26 +137,38 @@ const MenuAccordionView = {
             itemHTML += `<p>${item.description}</p>`;
         }
 
-        // Precios múltiples (para pizzas)
         if (item.prices) {
-            itemHTML += '<div class="prices">';
+            itemHTML += '<div class="price-grid">';
             if (item.prices.pequena) {
-                itemHTML += `<span class="price-pequena">Pequeña (8″): $${item.prices.pequena.toLocaleString('es-CO')}</span>`;
+                itemHTML += `
+                    <div class="price-cell price-pequena">
+                        <span class="price-size">Pequeña</span>
+                        <span class="price-inch">8″</span>
+                        <span class="price-value">${item.prices.pequena.toLocaleString('es-CO')}</span>
+                    </div>`;
             }
             if (item.prices.mediana) {
-                itemHTML += `<span class="price-mediana">Mediana (12″): $${item.prices.mediana.toLocaleString('es-CO')}</span>`;
+                itemHTML += `
+                    <div class="price-cell price-mediana">
+                        <span class="price-size">Mediana</span>
+                        <span class="price-inch">12″</span>
+                        <span class="price-value">${item.prices.mediana.toLocaleString('es-CO')}</span>
+                    </div>`;
             }
             if (item.prices.grande) {
-                itemHTML += `<span class="price-grande">Grande (16″): $${item.prices.grande.toLocaleString('es-CO')}</span>`;
+                itemHTML += `
+                    <div class="price-cell price-grande">
+                        <span class="price-size">Grande</span>
+                        <span class="price-inch">16″</span>
+                        <span class="price-value">${item.prices.grande.toLocaleString('es-CO')}</span>
+                    </div>`;
             }
             itemHTML += '</div>';
-        }
-        // Precio único
-        else if (item.price) {
-            itemHTML += `<div class="price-single">$${item.price.toLocaleString('es-CO')}</div>`;
+        } else if (item.price) {
+            itemHTML += `<div class="price-single">${item.price.toLocaleString('es-CO')}</div>`;
         }
 
-        itemHTML += '</div>';
+        itemHTML += '</article>';
         return itemHTML;
     },
 
@@ -150,10 +193,21 @@ const MenuAccordionView = {
         html += '</div></div>';
 
         return html;
+    },
+
+    /**
+     * Renderiza la navegación rápida por categorías
+     * @returns {string} HTML de la nav
+     */
+    renderQuickNav() {
+        const categories = MenuModel.getAllCategories();
+        return categories.map(category => {
+            const title = this.getCategoryTitle(category);
+            return `<button class="menu-quick-nav__btn" onclick="MenuController.jumpToCategory('${category.id}')">${category.icon} ${title}</button>`;
+        }).join('\n');
     }
 };
 
-// Exportar para uso en otros archivos
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = MenuAccordionView;
 }
